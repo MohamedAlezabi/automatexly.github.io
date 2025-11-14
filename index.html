@@ -1,47 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutomateX — AI Automation Agency</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AutomateX – AI Automation for Small Businesses</title>
+
+  <!-- Fonts: Poppins (EN) + Cairo (AR) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cairo:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --card-bg: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --accent: #4a46ff;
+      --accent-dark: #3130d4;
+      --border: #e2e2f0;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 18px 64px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.03em;
+    }
+
+    nav a {
+      font-size: 0.93rem;
+      margin-left: 18px;
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    .lang-toggle button {
+      border: none;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--muted);
+    }
+
+    .lang-toggle button.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .hero {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px 24px 28px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(74, 70, 255, 0.28);
+    }
+
+    .btn-main:hover {
+      background: var(--accent-dark);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #16a34a;
+    }
+
+    .section {
+      margin-top: 32px;
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .section p.section-intro {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 18px 16px 16px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .card small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(74, 70, 255, 0.06);
+      color: var(--accent-dark);
+      margin-bottom: 6px;
+    }
+
+    .case-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+
+    .contact-list li {
+      margin-bottom: 4px;
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Arabic version */
+    .lang-ar {
+      display: none;
+      font-family: "Cairo", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .lang-ar .hero {
+      text-align: right;
+    }
+
+    .lang-ar .btn-main {
+      flex-direction: row-reverse;
+    }
+
+    /* When Arabic is active */
+    .mode-ar .lang-en {
+      display: none;
+    }
+
+    .mode-ar .lang-ar {
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      nav {
+        display: none; /* keep it super minimal for now */
+      }
+
+      .hero {
+        padding: 24px 18px 22px;
+      }
+    }
+  </style>
+
+  <script>
+    // Simple language toggle
+    function setLanguage(lang) {
+      const root = document.documentElement;
+      const enBtn = document.getElementById("btn-en");
+      const arBtn = document.getElementById("btn-ar");
+
+      if (lang === "ar") {
+        root.classList.add("mode-ar");
+        enBtn.classList.remove("active");
+        arBtn.classList.add("active");
+      } else {
+        root.classList.remove("mode-ar");
+        enBtn.classList.add("active");
+        arBtn.classList.remove("active");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // default English
+      setLanguage("en");
+    });
+  </script>
 </head>
+
 <body>
+  <div class="page">
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h1>AutomateX</h1>
-        <p class="subtitle">AI-powered automation for small businesses.</p>
+    <!-- HEADER -->
+    <header>
+      <div>
+        <div class="logo">AutomateX</div>
+      </div>
 
-        <a class="cta" href="https://wa.me/218918956478" target="_blank">
-            Get Started on WhatsApp
+      <div style="display:flex;align-items:center;gap:16px;">
+        <nav>
+          <a href="#services">Services</a>
+          <a href="#cases">Case Studies</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="lang-toggle">
+          <button id="btn-en" onclick="setLanguage('en')">EN</button>
+          <button id="btn-ar" onclick="setLanguage('ar')">عربي</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ENGLISH VERSION -->
+    <main class="lang-en">
+      <section class="hero">
+        <h1>AI-powered automation for small businesses.</h1>
+        <p>We build chatbots, workflows, and content systems that reply, follow up, and nurture your customers — so you
+          don’t have to.</p>
+
+        <a class="btn-main" href="https://wa.me/218918956478" target="_blank" rel="noopener">
+          Get Started on WhatsApp
         </a>
 
-        <p class="tagline">Your business — automated, optimized, and scaled.</p>
-    </section>
+        <p class="hero-sub">Done-for-you setup for restaurants, gyms, clinics, and local businesses.</p>
 
-    <!-- FEATURES -->
-    <section class="features">
-        <div class="feature">
-            <h3>🤖 AI Chatbots</h3>
-            <p>We build automated systems that reply, nurture, and convert your customers 24/7.</p>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span>Built and managed by Mohamed Alezabi.</span>
         </div>
+      </section>
 
-        <div class="feature">
-            <h3>📱 Social Media Systems</h3>
-            <p>Content, posting, engagement, and growth — handled with AI assistance.</p>
+      <!-- SERVICES -->
+      <section id="services" class="section">
+        <h2>What we build</h2>
+        <p class="section-intro">Simple, powerful systems — no extra fluff.</p>
+
+        <div class="cards">
+          <article class="card">
+            <span class="tag">AI Chatbots</span>
+            <h3>Automated chat & follow-ups</h3>
+            <small>Instagram, Facebook, WhatsApp.</small>
+            <p>We design flows that answer FAQs, capture leads, send reminders, and move people toward booking or
+              ordering, 24/7.</p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Social Media Systems</span>
+            <h3>Content & engagement frameworks</h3>
+            <small>For restaurants, gyms, and local brands.</small>
+            <p>We help you turn your page into a system: content pillars, posting rhythm, and automation that connects
+              posts to DMs and sales.</p>
+          </article>
+
+          <article class="card">
+            <span class="tag">Automation</span>
+            <h3>Behind-the-scenes workflows</h3>
+            <small>Leads, orders, and simple CRM.</small>
+            <p>Lightweight automations that log leads, tag customers, and keep track of who ordered, who booked, and who
+              needs follow up.</p>
+          </article>
         </div>
+      </section>
 
-        <div class="feature">
-            <h3>🎬 High-Impact Reels</h3>
-            <p>Professional edits, gym-style reels, and short-form bangers that get attention.</p>
+      <!-- CASE STUDY PREVIEW -->
+      <section id="cases" class="section">
+        <h2>Selected results</h2>
+        <p class="section-intro">Real projects from Libya — more detailed case studies coming soon.</p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Almansory Restaurant – ManyChat & SMM</h3>
+            <p>Built a chatbot + content system for a local restaurant: handled comments, DMs, and daily posting while
+              tracking orders & engagement.</p>
+            <p class="case-meta">Highlights: more consistent posting, faster reply times, and clearer view of which
+              posts actually bring customers.</p>
+          </article>
+
+          <article class="card">
+            <h3>Boxing Gym – Content & automation</h3>
+            <p>Created reels, handled social media, and connected interested leads to WhatsApp so the gym owner can
+              focus on training, not DMs.</p>
+            <p class="case-meta">Highlights: organic reach + professional presence without the owner needing to become a
+              full-time editor.</p>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <!-- FOOTER -->
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <h2>Let’s automate your business</h2>
+        <p class="section-intro">Tell me what you do and where you feel “stuck” — I’ll tell you what we can automate in
+          the next 30 days.</p>
+
+        <ul class="contact-list">
+          <li>📲 WhatsApp: <a href="https://wa.me/218918956478" target="_blank" rel="noopener">+218 91 895 6478</a></li>
+          <li>📩 Email: <a href="mailto:automatex.ly@gmail.com">automatex.ly@gmail.com</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- ARABIC VERSION -->
+    <main class="lang-ar">
+      <section class="hero">
+        <h1>AutomateX – أنظمة ذكاء اصطناعي لصحاب المشاريع الصغيرة</h1>
+        <p>نركّب لك شات بوت وأنظمة بسيطة ترد على الزبائن، تجمع الداتا، وتذكّرهم بالطلب أو الحجز بدل ما تضيع وقتك في
+          الرسايل.</p>
+
+        <a class="btn-main" href="https://wa.me/218918956478" target="_blank" rel="noopener">
+          إبدأ على الواتساب
+        </a>
+
+        <p class="hero-sub">مناسب للمطاعم، الجيمات، العيادات، وأي بزنس محلي يعتمد على الواتساب والسوشيال ميديا.</p>
+
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span>من تنفيذ وإدارة محمد العزابي.</span>
+        </div>
+      </section>
+
+      <!-- SERVICES AR -->
+      <section id="services-ar" class="section">
+        <h2>شن نقدر نديرلك؟</h2>
+        <p class="section-intro">أنظمة بسيطة، مركّزة، بدون تعقيد.</p>
+
+        <div class="cards">
+          <article class="card">
+            <span class="tag">شات بوت بالذكاء الاصطناعي</span>
+            <h3>رد تلقائي وفلتر للزبائن</h3>
+            <small>إنستغرام، فيسبوك، واتساب.</small>
+            <p>نجهّز مسارات ترد على الأسئلة، تاخذ أرقام الزباين، وتوصلّهم للحجز أو الطلب طول اليوم حتى وانت نايم.</p>
+          </article>
+
+          <article class="card">
+            <span class="tag">أنظمة سوشيال ميديا</span>
+            <h3>خطة محتوى + أوتوميشن</h3>
+            <small>للمطاعم والجيمات والبزنسات الصغيرة.</small>
+            <p>نرتّبلك أعمدة محتوى وجدول نشر، ونربط البوستات بالـDM والواتساب باش أي تفاعل يتحوّل لعميل محتمل.</p>
+          </article>
+
+          <article class="card">
+            <span class="tag">أتمتة البزنس</span>
+            <h3>مسارات خلف الكواليس</h3>
+            <small>تسجيل الطلبات والعملاء.</small>
+            <p>أنظمة خفيفة تتبع من طلب، من حجز، ومن يحتاج تذكير، بدون ما تضيع في الأوراق والرسائل.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CASE STUDIES AR -->
+      <section id="cases-ar" class="section">
+        <h2>شغل فعلي على الأرض</h2>
+        <p class="section-intro">أمثلة حقيقية من ليبيا – قريب حتكون فيه كيس ستادي كاملة بالأرقام.</p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>مطعم المنصوري – ManyChat + إدارة حساب</h3>
+            <p>ركّبنا شات بوت + نظام محتوى يتعامل مع التعليقات والرسائل الخاصة، مع نشر يومي مرتب ومرتبطة بالمبيعات.</p>
+            <p class="case-meta">النتيجة: رد أسرع، محتوى ثابت، وصورة أوضح لأي بوست يجيب زبائن فعلياً.</p>
+          </article>
+
+          <article class="card">
+            <h3>نادي ملاكمة – محتوى + أوتوميشن</h3>
+            <p>فيديوهات، ريلز، وإدارة سوشيال ميديا مربوطة بالواتساب، باش الكوتش يركز على التمرين بدل الرد على كل رسالة.</p>
+            <p class="case-meta">النتيجة: حضور أونلاين أقوى بدون ما يصير المالك “إيديتور” طول اليوم.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT AR -->
+      <section id="contact-ar" class="section">
+        <h2>خلّينا نركّبلك نظام يمشي وحده</h2>
+        <p class="section-intro">قول شنو نوع البزنس متاعك وشن أكثر نقطة خانقتك في الرسائل أو التنظيم، ونقترحلك شن نقدر
+          نأتمت خلال 30 يوم.</p>
+
+        <ul class="contact-list">
+          <li>📲 واتساب: <a href="https://wa.me/218918956478" target="_blank" rel="noopener">+218 91 895 6478</a></li>
+          <li>📩 إيميل: <a href="mailto:automatex.ly@gmail.com">automatex.ly@gmail.com</a></li>
+        </ul>
+      </section>
+    </main>
+
     <footer>
-        <p>© 2025 AutomateX — Built by Mohamed Alezabi</p>
+      © <span id="year"></span> AutomateX. Built with GitHub Pages.
     </footer>
+  </div>
 
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
