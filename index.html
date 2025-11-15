@@ -373,6 +373,97 @@
         padding: 26px 18px 20px;
       }
     }
+    
+    /* -------------------------------
+   AutomateX Chatbot Placeholder
+--------------------------------*/
+
+.ax-chat-widget {
+  margin-top: 40px;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(129, 76, 255, 0.15);
+  font-family: 'Poppins', sans-serif;
+}
+
+.ax-chat-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ax-chat-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.ax-chat-meta {
+  margin-left: 12px;
+}
+
+.ax-chat-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ax-chat-subtitle {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.ax-chat-body {
+  margin-top: 10px;
+}
+
+.ax-chat-bubble {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.ax-chat-bubble-bot {
+  border-left: 3px solid #8b5cf6;
+}
+
+.ax-chat-cta {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #7c3aed;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ax-chat-cta:hover {
+  background: #6d28d9;
+}
+
+.ax-chat-note {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+}
   </style>
 </head>
 
@@ -612,6 +703,37 @@
         across MENA and beyond.
       </p>
     </section>
+    </section>
+
+<!-- AX Chatbot Placeholder Widget -->
+<div class="ax-chat-widget">
+    <div class="ax-chat-header">
+        <div class="ax-chat-avatar">AX</div>
+        <div class="ax-chat-meta">
+            <div class="ax-chat-title">AX Bot</div>
+            <div class="ax-chat-subtitle">AutomateX Assistant 🤖</div>
+        </div>
+    </div>
+
+    <div class="ax-chat-body">
+        <div class="ax-chat-bubble ax-chat-bubble-bot">
+            Hey! I’m the system that answers your customers 24/7.
+        </div>
+        <div class="ax-chat-bubble ax-chat-bubble-bot">
+            Want to see what we can automate for your business?
+        </div>
+
+        <button class="ax-chat-cta">
+            Try Demo
+        </button>
+
+        <div class="ax-chat-note">
+            (Real interactive chat coming soon.)
+        </div>
+    </div>
+</div>
+
+<footer>
 
   <footer>
       Let your business run on autopilot. 🤖  
