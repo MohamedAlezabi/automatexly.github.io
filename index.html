@@ -1,93 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AutomateX — AI Systems for Small Businesses</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
-<style>
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #ffffff;
-    color: #111;
-    line-height: 1.7;
-}
-.hero {
-    text-align: center;
-    padding: 8rem 1.5rem;
-}
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-p {
-    font-size: 1.2rem;
-    opacity: 0.8;
-}
-.btn {
-    display: inline-block;
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    background: #4c5bf0;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-.section {
-    padding: 5rem 1.5rem;
-    max-width: 900px;
-    margin: auto;
-}
-.service {
-    margin-bottom: 3rem;
-}
-.service h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-.footer {
-    text-align: center;
-    padding: 3rem;
-    opacity: 0.7;
-    font-size: 0.9rem;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutomateX — AI Automation Agency</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f6f6fb;
+      --card: #ffffff;
+      --text: #16161d;
+      --muted: #6b6b7a;
+      --accent: #4a46ff;
+      --accent-dark: #3330d5;
+      --border: #e2e2f2;
+      --radius: 16px;
+      --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #f0f0ff 0, #f6f6fb 40%, #f8f8ff 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 28px 18px 80px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #4a46ff, #9f70ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 1.1rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      margin-left: 18px;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      background: var(--card);
+      border-radius: 26px;
+      box-shadow: var(--shadow-soft);
+      padding: 36px 26px 30px;
+      margin-bottom: 32px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hero-pre {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(74, 70, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--muted);
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .hero-side {
+      border-radius: 20px;
+      border: 1px solid rgba(226, 226, 242, 0.9);
+      padding: 18px 16px 16px;
+      background: radial-gradient(circle at top left, #f1efff 0, #ffffff 45%);
+      font-size: 0.83rem;
+    }
+
+    .side-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .side-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .side-bullets li {
+      margin-left: 16px;
+      margin-bottom: 4px;
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 36px;
+    }
+
+    .section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .section-intro {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 18px 16px 16px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .card small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(74, 70, 255, 0.06);
+      color: var(--accent-dark);
+      margin-bottom: 8px;
+    }
+
+    .pill-inline {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      font-size: 0.88rem;
+    }
+
+    .step {
+      background: #fbfbff;
+      border-radius: 14px;
+      border: 1px dashed var(--border);
+      padding: 12px 12px 10px;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .price-card {
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 18px 16px;
+      box-shadow: 0 10px 26px rgba(15,23,42,0.06);
+      font-size: 0.9rem;
+    }
+
+    .price-name {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .price-tag {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .price-card ul {
+      list-style: disc;
+      margin-left: 16px;
+      margin-bottom: 10px;
+    }
+
+    .case-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    .case-col h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .case-col ul {
+      list-style: disc;
+      margin-left: 16px;
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .cta-box {
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 20px 18px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+      font-size: 0.9rem;
+    }
+
+    .cta-actions {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding: 26px 18px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="page">
 
-<!-- HERO -->
-<div class="hero">
-    <h1>AutomateX</h1>
-    <p>AI-powered automation for small businesses.</p>
-    <a class="btn" href="https://wa.me/218918956478?text=Hello%20AutomateX%2C%20I%20want%20automation">Get Started on WhatsApp</a>
-</div>
+    <header>
+      <div class="brand">
+        <div class="brand-mark">AX</div>
+        <div class="brand-name">AutomateX</div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#case">Case Study</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
 
-<!-- SERVICES SECTION -->
-<div class="section">
-    <div class="service">
-        <h2>🤖 AI Chatbots</h2>
-        <p>Smart automated systems that reply to customers 24/7, capture leads, qualify clients, and close sales.</p>
-    </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-pre">AI AUTOMATION AGENCY</div>
+          <h1>Run your business on autopilot.</h1>
+          <p class="hero-sub">
+            AutomateX builds AI chatbots, workflow automations, and business systems
+            that save time, increase sales, and handle customers 24/7.
+          </p>
+          <div class="hero-cta-row">
+            <a class="btn-primary" href="https://wa.me/218918956478?text=Hello%20AutomateX%2C%20I%20want%20automation" target="_blank" rel="noopener">
+              Get Started on WhatsApp
+            </a>
+            <a class="btn-outline" href="#demo">
+              See how the system looks
+            </a>
+          </div>
+          <p class="hero-note">
+            One of Libya’s first AI automation agencies — est. 2021. Serving restaurants, gyms, clinics, creators and local brands.
+          </p>
+        </div>
 
-    <div class="service">
-        <h2>📱 Social Media Automation</h2>
-        <p>Content, posting schedules, auto-replies, analytics, and growth — all optimized with AI assistance.</p>
-    </div>
+        <div class="hero-side">
+          <div class="side-tag">LIVE SYSTEM SNAPSHOT</div>
+          <div class="side-title">What we install inside your business:</div>
+          <ul class="side-bullets">
+            <li>AI chatbot that replies instantly on WhatsApp / IG / FB.</li>
+            <li>Workflows that follow up with leads automatically.</li>
+            <li>Simple dashboard to see who messaged, booked, or ordered.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <div class="service">
-        <h2>⚡ Business Systems</h2>
-        <p>We design workflow automations that save time, reduce errors, and help small businesses scale.</p>
-    </div>
-</div>
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <h2>What we build</h2>
+      <p class="section-intro">
+        Simple, powerful systems for real businesses — no over-complication, no buzzword fluff.
+      </p>
 
-<!-- FOOTER -->
-<div class="footer">
-    © 2025 AutomateX — AI Systems & Automation
-</div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag">AI Chatbots</span>
+          <h3>24/7 smart replies & lead capture</h3>
+          <small>WhatsApp, Instagram, Facebook</small>
+          <p>
+            We build chatbots that answer questions, collect contact details, qualify leads, send menus/prices, and
+            move people toward booking or ordering — automatically.
+          </p>
+        </article>
 
+        <article class="card">
+          <span class="tag">Workflow Automation</span>
+          <h3>Automated follow-ups & reminders</h3>
+          <small>Stop losing customers to “I forgot”.</small>
+          <p>
+            We turn your repetitive tasks into flows that run in the background: reminders, re-engagement,
+            notifications, and simple internal processes.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Business Systems</span>
+          <h3>Operating systems for small businesses</h3>
+          <small>Chatbot + CRM + calendar + tracking.</small>
+          <p>
+            A clean setup that connects everything: customer messages, bookings, notes, and follow-ups — so your
+            business feels organized instead of chaotic.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section">
+      <h2>How it works</h2>
+      <p class="section-intro">
+        Clear, lightweight process. No endless calls, no confusion.
+      </p>
+
+      <div class="process-steps">
+        <div class="step">
+          <strong>1. Free automation audit (10 minutes)</strong>
+          <span>We look at how customers currently reach you and where time is being wasted.</span>
+        </div>
+        <div class="step">
+          <strong>2. System design</strong>
+          <span>We map a simple automation flow based on your goals (more sales, more time, better organization).</span>
+        </div>
+        <div class="step">
+          <strong>3. Installation & integration</strong>
+          <span>We connect chatbots, WhatsApp / IG, basic CRM, and workflows around your daily reality.</span>
+        </div>
+        <div class="step">
+          <strong>4. Optimization (first 2–4 weeks)</strong>
+          <span>We watch how people use it and tune replies, steps, and triggers.</span>
+        </div>
+        <div class="step">
+          <strong>5. Monthly maintenance (optional)</strong>
+          <span>We keep the system updated as your business changes.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <h2>Simple pricing</h2>
+      <p class="section-intro">
+        Pricing can be adapted to LYD or USD. This is a simple structure you can grow with.
+      </p>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-name">Starter</div>
+          <div class="price-tag">From $79 / 200–300 LYD</div>
+          <ul>
+            <li>Basic AI chatbot</li>
+            <li>FAQ replies</li>
+            <li>Lead capture</li>
+          </ul>
+          <div class="pill-inline">Ideal for testing automation on a single channel.</div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-name">Growth</div>
+          <div class="price-tag">From $149 / 350–500 LYD</div>
+          <ul>
+            <li>Full chatbot + flows</li>
+            <li>Basic CRM & tagging</li>
+            <li>Simple bookings or orders</li>
+            <li>Light analytics</li>
+          </ul>
+          <div class="pill-inline">Best for restaurants, gyms, clinics and local brands.</div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-name">Scale</div>
+          <div class="price-tag">$249+ / custom</div>
+          <ul>
+            <li>Full automation system</li>
+            <li>Comment → DM → sale funnels</li>
+            <li>Advanced tracking & reports</li>
+            <li>Priority support</li>
+          </ul>
+          <div class="pill-inline">For serious operations that want a full AI-powered engine.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDY -->
+    <section id="case" class="section">
+      <h2>Case Study: Almansory Restaurant</h2>
+      <p class="section-intro">
+        From manual replies and random posting to a simple automated system that ties content, DMs, and orders together.
+      </p>
+
+      <div class="case-layout">
+        <div class="case-col">
+          <h3>Before</h3>
+          <ul>
+            <li>Owner replying to DMs manually between other tasks.</li>
+            <li>No clear way to track which posts brought customers.</li>
+            <li>Inconsistent response times and missed messages.</li>
+          </ul>
+        </div>
+        <div class="case-col">
+          <h3>After AutomateX</h3>
+          <ul>
+            <li>Automated menu & basic FAQ replies.</li>
+            <li>Comment → DM → order flow using ManyChat.</li>
+            <li>Clearer understanding of what actually drives sales.</li>
+          </ul>
+        </div>
+        <div class="case-col">
+          <h3>System installed</h3>
+          <ul>
+            <li>Instagram + Facebook chatbot flows.</li>
+            <li>Simple lead/interest tracking.</li>
+            <li>Foundations for future campaigns and retargeting.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO / CONTACT -->
+    <section id="demo" class="section">
+      <h2>See it for your business</h2>
+      <div class="cta-box">
+        <p>
+          In a 20-minute call, we’ll look at your current messages, traffic, and bottlenecks — then show you what can be
+          automated in the next 30 days.
+        </p>
+        <div class="cta-actions">
+          <a class="btn-primary" href="https://wa.me/218918956478?text=I%20want%20an%20automation%20audit%20for%20my%20business" target="_blank" rel="noopener">
+            Book a free automation audit
+          </a>
+          <span style="font-size:0.85rem;color:var(--muted);">
+            Prefer email? Contact: automatex.ly@gmail.com
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT FOUNDER -->
+    <section id="about" class="section">
+      <h2>About AutomateX & the founder</h2>
+      <p class="about-text">
+        AutomateX is an AI automation agency founded in 2021 by
+        <strong>Mohamed Alezabi</strong>, an AI automation specialist, content creator, and trainer.
+        He has built systems and automations for restaurants, gyms, and local brands, combining
+        social media experience with a deep focus on workflows and real-world results.
+        <br><br>
+        The mission is simple: give small businesses the kind of automation big companies pay thousands
+        for — in a way that is affordable, practical, and easy to use. Based in Libya, serving clients
+        across MENA and beyond.
+      </p>
+    </section>
+
+    <footer>
+      Let your business run on autopilot. 🤖 &nbsp;|&nbsp; © <span id="year"></span> AutomateX
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
