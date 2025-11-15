@@ -220,26 +220,12 @@
       gap: 18px;
     }
 
-    223 .card {
-224   background: var(--card);
-225   border-radius: 18px;
-226   padding: 20px;
-227   box-shadow: 0 18px 40px rgba(15, 15, 35, 0.14);
-228 }
-
-229 .chat-card {
-230   max-width: 480px;
-231   margin: 32px auto;
-232 }
-
-233 .ax-chat-bubble {
-234   background: #f5f0ff;
-235   border-radius: 14px;
-236   border-top-left-radius: 0;
-237   padding: 12px 16px;
-238   margin-bottom: 10px;
-239   font-size: 0.95rem;
-240 }
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 18px 40px rgba(15, 15, 35, 0.14);
+    }
 
     .card h3 {
       font-size: 1rem;
@@ -385,125 +371,126 @@
         padding: 26px 18px 20px;
       }
     }
-    
-    260 .ax-typing {
-261   display: flex;
-262   gap: 4px;
-263   margin-top: 8px;
-264 }
 
-265 .ax-typing span {
-266   width: 6px;
-267   height: 6px;
-268   background: #9b5cff;
-269   border-radius: 50%;
-270   animation: typing 1s infinite ease-in-out;
-271 }
+    /* Typing dots for AX bot */
+    .ax-typing {
+      display: flex;
+      gap: 4px;
+      margin-top: 8px;
+    }
 
-272 .ax-typing span:nth-child(2) {
-273   animation-delay: 0.15s;
-274 }
+    .ax-typing span {
+      width: 6px;
+      height: 6px;
+      background: #9b5cff;
+      border-radius: 50%;
+      animation: typing 1s infinite ease-in-out;
+    }
 
-275 .ax-typing span:nth-child(3) {
-276   animation-delay: 0.3s;
-277 }
+    .ax-typing span:nth-child(2) {
+      animation-delay: 0.15s;
+    }
 
-278 @keyframes typing {
-279   0%   { transform: translateY(0); }
-280   50%  { transform: translateY(-4px); }
-281   100% { transform: translateY(0); }
-282 }
-    
+    .ax-typing span:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes typing {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-4px); }
+      100% { transform: translateY(0); }
+    }
+
     /* -------------------------------
-   AutomateX Chatbot Placeholder
---------------------------------*/
+       AutomateX Chatbot Placeholder
+    --------------------------------*/
 
-.ax-chat-widget {
-  margin-top: 40px;
-  padding: 20px;
-  background: var(--card);
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 10px 30px rgba(129, 76, 255, 0.15);
-  font-family: 'Poppins', sans-serif;
-}
+    .ax-chat-widget {
+      margin-top: 40px;
+      padding: 20px;
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 10px 30px rgba(129, 76, 255, 0.15);
+      font-family: 'Poppins', sans-serif;
+    }
 
-.ax-chat-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
+    .ax-chat-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
 
-.ax-chat-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #8b5cf6, #6366f1);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  font-size: 1rem;
-}
+    .ax-chat-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1rem;
+    }
 
-.ax-chat-meta {
-  margin-left: 12px;
-}
+    .ax-chat-meta {
+      margin-left: 12px;
+    }
 
-.ax-chat-title {
-  font-size: 1rem;
-  font-weight: 600;
-}
+    .ax-chat-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
 
-.ax-chat-subtitle {
-  color: var(--muted);
-  font-size: 0.85rem;
-  margin-top: 2px;
-}
+    .ax-chat-subtitle {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
 
-.ax-chat-body {
-  margin-top: 10px;
-}
+    .ax-chat-body {
+      margin-top: 10px;
+    }
 
-.ax-chat-bubble {
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text);
-  margin-bottom: 8px;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
+    .ax-chat-bubble {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
 
-.ax-chat-bubble-bot {
-  border-left: 3px solid #8b5cf6;
-}
+    .ax-chat-bubble-bot {
+      border-left: 3px solid #8b5cf6;
+    }
 
-.ax-chat-cta {
-  width: 100%;
-  padding: 12px 14px;
-  margin-top: 10px;
-  border-radius: 12px;
-  border: none;
-  background: #7c3aed;
-  color: white;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-}
+    .ax-chat-cta {
+      width: 100%;
+      padding: 12px 14px;
+      margin-top: 10px;
+      border-radius: 12px;
+      border: none;
+      background: #7c3aed;
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
 
-.ax-chat-cta:hover {
-  background: #6d28d9;
-}
+    .ax-chat-cta:hover {
+      background: #6d28d9;
+    }
 
-.ax-chat-note {
-  margin-top: 10px;
-  font-size: 0.75rem;
-  color: var(--muted);
-  text-align: center;
-}
+    .ax-chat-note {
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -597,51 +584,49 @@
           </p>
         </article>
 
-     <article class="card ax-bot-card">
-       <span class="tag">Chatbot Demo</span>
-       <h3>AX Bot – your new assistant.</h3>
-      <small>Instant replies, 24/7 support, no extra staff.</small>
-        
-        <p>
-         See how an AI assistant could greet your customers
-         and answer common questions automatically.
-       </p>
-       <button class="primary-btn">Try Demo</button>
-     </article>
-  
-      </div> <!-- end grid-3 -->
- </section> <!-- end services -->
-    
+        <article class="card ax-bot-card">
+          <span class="tag">Chatbot Demo</span>
+          <h3>AX Bot – your new assistant.</h3>
+          <small>Instant replies, 24/7 support, no extra staff.</small>
+          <p>
+            See how an AI assistant could greet your customers
+            and answer common questions automatically.
+          </p>
+          <button class="btn-primary" id="ax-bot-demo-btn">Try Demo</button>
+        </article>
+      </div>
+    </section>
+
     <!-- PROCESS -->
-      <section id="process" class="section">
-        <h2>How it works</h2>
-        <p class="section-intro">
-          Clear, lightweight process. No endless calls, no confusion.
-        </p>
-  
-        <div class="process-steps">
-          <div class="step">
-            <strong>1. Free automation audit (10 minutes)</strong>
-            <span>We look at how customers currently reach you and where time is being wasted.</span>
-          </div>
-          <div class="step">
-            <strong>2. System design</strong>
-            <span>We map a simple automation flow based on your goals (more sales, more time, better organization).</span>
-          </div>
-          <div class="step">
-            <strong>3. Installation & integration</strong>
-            <span>We connect chatbots, WhatsApp / IG, basic CRM, and workflows around your daily reality.</span>
-          </div>
-          <div class="step">
-            <strong>4. Optimization (first 2–4 weeks)</strong>
-            <span>We watch how people use it and tune replies, steps, and triggers.</span>
-          </div>
-          <div class="step">
-            <strong>5. Monthly maintenance (optional)</strong>
-            <span>We keep the system updated as your business changes.</span>
-          </div>
+    <section id="process" class="section">
+      <h2>How it works</h2>
+      <p class="section-intro">
+        Clear, lightweight process. No endless calls, no confusion.
+      </p>
+
+      <div class="process-steps">
+        <div class="step">
+          <strong>1. Free automation audit (10 minutes)</strong>
+          <span>We look at how customers currently reach you and where time is being wasted.</span>
         </div>
-      </section>
+        <div class="step">
+          <strong>2. System design</strong>
+          <span>We map a simple automation flow based on your goals (more sales, more time, better organization).</span>
+        </div>
+        <div class="step">
+          <strong>3. Installation & integration</strong>
+          <span>We connect chatbots, WhatsApp / IG, basic CRM, and workflows around your daily reality.</span>
+        </div>
+        <div class="step">
+          <strong>4. Optimization (first 2–4 weeks)</strong>
+          <span>We watch how people use it and tune replies, steps, and triggers.</span>
+        </div>
+        <div class="step">
+          <strong>5. Monthly maintenance (optional)</strong>
+          <span>We keep the system updated as your business changes.</span>
+        </div>
+      </div>
+    </section>
 
     <!-- PRICING -->
     <section id="pricing" class="section">
@@ -756,53 +741,49 @@
         across MENA and beyond.
       </p>
     </section>
-    </section>
 
-<!-- AX Chatbot Placeholder Widget -->
-<div class="ax-chat-widget">
-    <div class="ax-chat-header">
+    <!-- AX Chatbot Placeholder Widget -->
+    <div class="ax-chat-widget">
+      <div class="ax-chat-header">
         <div class="ax-chat-avatar">AX</div>
         <div class="ax-chat-meta">
-            <div class="ax-chat-title">AX Bot</div>
-            <div class="ax-chat-subtitle">AutomateX Assistant 🤖</div>
+          <div class="ax-chat-title">AX Bot</div>
+          <div class="ax-chat-subtitle">AutomateX Assistant 🤖</div>
         </div>
-    </div>
+      </div>
 
-    <div class="ax-chat-body">
+      <div class="ax-chat-body">
         <div class="ax-chat-bubble ax-chat-bubble-bot">
-            Hey! I’m the system that answers your customers 24/7.
+          Hey! I’m the system that answers your customers 24/7.
         </div>
-               <p class="ax-chat-bubble">
-         Want to see what we can automate for your business?
-       </p>
-
-       <div class="ax-typing">
-         <span></span><span></span><span></span>
-      
-     </div>
-     </div> <!-- end of chat body -->
-
-        <button class="ax-chat-cta">
-            Try Demo
-        </button>
-
-        <div class="ax-chat-note">
-            (Real interactive chat coming soon.)
+        <div class="ax-chat-bubble">
+          Want to see what we can automate for your business?
         </div>
+
+        <div class="ax-typing">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <button class="ax-chat-cta" id="ax-bot-widget-btn">
+        Try Demo
+      </button>
+
+      <div class="ax-chat-note">
+        (Real interactive chat coming soon.)
+      </div>
     </div>
-</div>
 
-<footer>
-
-  <footer>
-      Let your business run on autopilot. 🤖  
+    <footer>
+      Let your business run on autopilot. 🤖
       |
       <a href="https://instagram.com/automatex.ly" target="_blank" style="color: inherit; text-decoration: none;">
-          Instagram
+        Instagram
       </a>
       |
       © <span id="year"></span> AutomateX
-  </footer>
+    </footer>
+
   </div>
 
   <script>
