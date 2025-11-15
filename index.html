@@ -220,14 +220,26 @@
       gap: 18px;
     }
 
-    .card {
-      background: var(--card);
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      padding: 18px 16px 16px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
-      font-size: 0.9rem;
-    }
+    223 .card {
+224   background: var(--card);
+225   border-radius: 18px;
+226   padding: 20px;
+227   box-shadow: 0 18px 40px rgba(15, 15, 35, 0.14);
+228 }
+
+229 .chat-card {
+230   max-width: 480px;
+231   margin: 32px auto;
+232 }
+
+233 .ax-chat-bubble {
+234   background: #f5f0ff;
+235   border-radius: 14px;
+236   border-top-left-radius: 0;
+237   padding: 12px 16px;
+238   margin-bottom: 10px;
+239   font-size: 0.95rem;
+240 }
 
     .card h3 {
       font-size: 1rem;
@@ -373,6 +385,34 @@
         padding: 26px 18px 20px;
       }
     }
+    
+    260 .ax-typing {
+261   display: flex;
+262   gap: 4px;
+263   margin-top: 8px;
+264 }
+
+265 .ax-typing span {
+266   width: 6px;
+267   height: 6px;
+268   background: #9b5cff;
+269   border-radius: 50%;
+270   animation: typing 1s infinite ease-in-out;
+271 }
+
+272 .ax-typing span:nth-child(2) {
+273   animation-delay: 0.15s;
+274 }
+
+275 .ax-typing span:nth-child(3) {
+276   animation-delay: 0.3s;
+277 }
+
+278 @keyframes typing {
+279   0%   { transform: translateY(0); }
+280   50%  { transform: translateY(-4px); }
+281   100% { transform: translateY(0); }
+282 }
     
     /* -------------------------------
    AutomateX Chatbot Placeholder
@@ -719,9 +759,14 @@
         <div class="ax-chat-bubble ax-chat-bubble-bot">
             Hey! I’m the system that answers your customers 24/7.
         </div>
-        <div class="ax-chat-bubble ax-chat-bubble-bot">
-            Want to see what we can automate for your business?
-        </div>
+        590       <p class="ax-chat-bubble">
+591         Want to see what we can automate for your business?
+592       </p>
+
+593       <div class="ax-typing">
+594         <span></span><span></span><span></span>
+595       </div>
+596     </div> <!-- end of chat body -->
 
         <button class="ax-chat-cta">
             Try Demo
