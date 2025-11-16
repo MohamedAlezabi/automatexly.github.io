@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cairo:wght@300;400;600;700&display=swap"
     rel="stylesheet">
 
   <style>
@@ -38,6 +38,10 @@
       line-height: 1.7;
     }
 
+    html[lang="ar"] body {
+      font-family: "Cairo", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -54,6 +58,7 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 28px;
+      gap: 16px;
     }
 
     .brand {
@@ -81,14 +86,47 @@
       font-size: 1.1rem;
     }
 
-    nav a {
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
       font-size: 0.9rem;
-      margin-left: 18px;
+    }
+
+    nav a {
       color: var(--muted);
     }
 
     nav a:hover {
       color: var(--accent);
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+      box-shadow: 0 6px 18px rgba(15,23,42,0.12);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      cursor: pointer;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lang-btn-active {
+      background: #111827;
+      color: #f9fafb;
     }
 
     .hero {
@@ -352,26 +390,6 @@
       text-align: center;
     }
 
-    @media (max-width: 720px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero {
-        padding: 26px 18px 20px;
-      }
-    }
-
     /* Typing dots for AX bot */
     .ax-typing {
       display: flex;
@@ -401,10 +419,7 @@
       100% { transform: translateY(0); }
     }
 
-    /* -------------------------------
-       AutomateX Chatbot Placeholder
-    --------------------------------*/
-
+    /* AX chatbot widget */
     .ax-chat-widget {
       margin-top: 40px;
       padding: 20px;
@@ -412,13 +427,14 @@
       border-radius: 18px;
       border: 1px solid rgba(255, 255, 255, 0.06);
       box-shadow: 0 10px 30px rgba(129, 76, 255, 0.15);
-      font-family: 'Poppins', sans-serif;
+      font-family: inherit;
     }
 
     .ax-chat-header {
       display: flex;
       align-items: center;
       margin-bottom: 16px;
+      gap: 12px;
     }
 
     .ax-chat-avatar {
@@ -432,10 +448,6 @@
       align-items: center;
       font-weight: 700;
       font-size: 1rem;
-    }
-
-    .ax-chat-meta {
-      margin-left: 12px;
     }
 
     .ax-chat-title {
@@ -467,6 +479,11 @@
       border-left: 3px solid #8b5cf6;
     }
 
+    html[lang="ar"] .ax-chat-bubble-bot {
+      border-left: none;
+      border-right: 3px solid #8b5cf6;
+    }
+
     .ax-chat-cta {
       width: 100%;
       padding: 12px 14px;
@@ -491,6 +508,68 @@
       color: var(--muted);
       text-align: center;
     }
+
+    /* Bilingual visibility */
+    [data-lang] {
+      transition: opacity 0.15s ease;
+    }
+
+    html[lang="en"] [data-lang="ar"] {
+      display: none;
+    }
+
+    html[lang="ar"] [data-lang="en"] {
+      display: none;
+    }
+
+    /* RTL tweaks */
+    html[lang="ar"] body {
+      direction: rtl;
+      text-align: right;
+    }
+
+    html[lang="ar"] .side-bullets li,
+    html[lang="ar"] .price-card ul,
+    html[lang="ar"] .case-col ul {
+      margin-right: 16px;
+      margin-left: 0;
+    }
+
+    html[lang="ar"] .hero-inner {
+      direction: rtl;
+    }
+
+    html[lang="ar"] header {
+      flex-direction: row-reverse;
+    }
+
+    html[lang="ar"] nav {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      html[lang="ar"] header {
+        align-items: flex-end;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding: 26px 18px 20px;
+      }
+    }
   </style>
 </head>
 
@@ -500,47 +579,107 @@
     <header>
       <div class="brand">
         <div class="brand-mark">AX</div>
-        <div class="brand-name">AutomateX</div>
+        <div class="brand-name">
+          <span data-lang="en">AutomateX</span>
+          <span data-lang="ar">أوتوميتيكس</span>
+        </div>
       </div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#case">Case Study</a>
-        <a href="#about">About</a>
-      </nav>
+
+      <div style="display:flex; align-items:center; gap:16px;">
+        <nav>
+          <a href="#services">
+            <span data-lang="en">Services</span>
+            <span data-lang="ar">الخدمات</span>
+          </a>
+          <a href="#process">
+            <span data-lang="en">Process</span>
+            <span data-lang="ar">آلية العمل</span>
+          </a>
+          <a href="#pricing">
+            <span data-lang="en">Pricing</span>
+            <span data-lang="ar">الأسعار</span>
+          </a>
+          <a href="#case">
+            <span data-lang="en">Case Study</span>
+            <span data-lang="ar">دراسة حالة</span>
+          </a>
+          <a href="#about">
+            <span data-lang="en">About</span>
+            <span data-lang="ar">من نحن</span>
+          </a>
+        </nav>
+
+        <div class="lang-switch">
+          <button class="lang-btn lang-btn-active" data-switch-lang="en">EN</button>
+          <button class="lang-btn" data-switch-lang="ar">AR 🇱🇾</button>
+        </div>
+      </div>
     </header>
 
     <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <div>
-          <div class="hero-pre">AI AUTOMATION AGENCY</div>
-          <h1>Run your business on autopilot.</h1>
+          <div class="hero-pre">
+            <span data-lang="en">AI AUTOMATION AGENCY</span>
+            <span data-lang="ar">وكالة أتمتة بالذكاء الاصطناعي</span>
+          </div>
+          <h1>
+            <span data-lang="en">Run your business on autopilot.</span>
+            <span data-lang="ar">خلّي شغلك يشتغل بروحه على الطيار الآلي.</span>
+          </h1>
           <p class="hero-sub">
-            AutomateX builds AI chatbots, workflow automations, and business systems
-            that save time, increase sales, and handle customers 24/7.
+            <span data-lang="en">
+              AutomateX builds AI chatbots, workflow automations, and business systems
+              that save time, increase sales, and handle customers 24/7.
+            </span>
+            <span data-lang="ar">
+              أوتوميتيكس تبني شات بوت ذكي، وأنظمة أتمتة، ولوحات تحكم بسيطة
+              تخليك توفّر وقت، تزيد المبيعات، وترد على عملاءك ٢٤/٧ بدون صداع.
+            </span>
           </p>
           <div class="hero-cta-row">
             <a class="btn-primary" href="https://wa.me/218918956478?text=Hello%20AutomateX%2C%20I%20want%20automation" target="_blank" rel="noopener">
-              Get Started on WhatsApp
+              <span data-lang="en">Get Started on WhatsApp</span>
+              <span data-lang="ar">ابدأ عبر واتساب</span>
             </a>
             <a class="btn-outline" href="#demo">
-              See how the system looks
+              <span data-lang="en">See how the system looks</span>
+              <span data-lang="ar">شوف كيف يشتغل النظام</span>
             </a>
           </div>
           <p class="hero-note">
-            One of Libya’s first AI automation agencies — est. 2021. Serving restaurants, gyms, clinics, creators and local brands.
+            <span data-lang="en">
+              One of Libya’s first AI automation agencies — est. 2021. Serving restaurants, gyms, clinics, creators and local brands.
+            </span>
+            <span data-lang="ar">
+              من أوائل وكالات الأتمتة بالذكاء الاصطناعي في ليبيا (من ٢٠٢١) نخدم المطاعم، النوادي، العيادات، و البراندات المحلية.
+            </span>
           </p>
         </div>
 
         <div class="hero-side">
-          <div class="side-tag">LIVE SYSTEM SNAPSHOT</div>
-          <div class="side-title">What we install inside your business:</div>
+          <div class="side-tag">
+            <span data-lang="en">LIVE SYSTEM SNAPSHOT</span>
+            <span data-lang="ar">نظرة سريعة على النظام</span>
+          </div>
+          <div class="side-title">
+            <span data-lang="en">What we install inside your business:</span>
+            <span data-lang="ar">شن نركّب جوّا مشروعك:</span>
+          </div>
           <ul class="side-bullets">
-            <li>AI chatbot that replies instantly on WhatsApp / IG / FB.</li>
-            <li>Workflows that follow up with leads automatically.</li>
-            <li>Simple dashboard to see who messaged, booked, or ordered.</li>
+            <li>
+              <span data-lang="en">AI chatbot that replies instantly on WhatsApp / IG / FB.</span>
+              <span data-lang="ar">شات بوت يرد فوراً على واتساب / إنستغرام / فيسبوك.</span>
+            </li>
+            <li>
+              <span data-lang="en">Workflows that follow up with leads automatically.</span>
+              <span data-lang="ar">مسارات أتمتة تتابع العملاء المهتمين تلقائياً.</span>
+            </li>
+            <li>
+              <span data-lang="en">Simple dashboard to see who messaged, booked, or ordered.</span>
+              <span data-lang="ar">لوحة بسيطة تشوف منها من سأل، حجز، أو طلب.</span>
+            </li>
           </ul>
         </div>
       </div>
@@ -548,161 +687,401 @@
 
     <!-- SERVICES -->
     <section id="services" class="section">
-      <h2>What we build</h2>
+      <h2>
+        <span data-lang="en">What we build</span>
+        <span data-lang="ar">شن نقدّم لك</span>
+      </h2>
       <p class="section-intro">
-        Simple, powerful systems for real businesses — no over-complication, no buzzword fluff.
+        <span data-lang="en">
+          Simple, powerful systems for real businesses — no over-complication, no buzzword fluff.
+        </span>
+        <span data-lang="ar">
+          أنظمة بسيطة وقوية تناسب البيزنس الحقيقي — بدون تعقيد زايد ولا مصطلحات فاضية.
+        </span>
       </p>
 
       <div class="grid-3">
         <article class="card">
-          <span class="tag">AI Chatbots</span>
-          <h3>24/7 smart replies & lead capture</h3>
-          <small>WhatsApp, Instagram, Facebook</small>
+          <span class="tag">
+            <span data-lang="en">AI Chatbots</span>
+            <span data-lang="ar">شات بوت بالذكاء الاصطناعي</span>
+          </span>
+          <h3>
+            <span data-lang="en">24/7 smart replies & lead capture</span>
+            <span data-lang="ar">ردود ذكية وتجميع عملاء مهتمين ٢٤/٧</span>
+          </h3>
+          <small>
+            <span data-lang="en">WhatsApp, Instagram, Facebook</span>
+            <span data-lang="ar">واتساب، إنستغرام، فيسبوك</span>
+          </small>
           <p>
-            We build chatbots that answer questions, collect contact details, qualify leads, send menus/prices, and
-            move people toward booking or ordering — automatically.
+            <span data-lang="en">
+              We build chatbots that answer questions, collect contact details, qualify leads, send menus/prices, and
+              move people toward booking or ordering — automatically.
+            </span>
+            <span data-lang="ar">
+              نبني شات بوت يجاوب على الأسئلة، يجمع بيانات العملاء، يفلتر الجديّين،
+              ويرسل المنيو والأسعار ويدفّع العميل اتجاه الحجز أو الطلب تلقائياً.
+            </span>
           </p>
         </article>
 
         <article class="card">
-          <span class="tag">Workflow Automation</span>
-          <h3>Automated follow-ups & reminders</h3>
-          <small>Stop losing customers to “I forgot”.</small>
+          <span class="tag">
+            <span data-lang="en">Workflow Automation</span>
+            <span data-lang="ar">أتمتة المهام</span>
+          </span>
+          <h3>
+            <span data-lang="en">Automated follow-ups & reminders</span>
+            <span data-lang="ar">متابعة وتذكير تلقائي</span>
+          </h3>
+          <small>
+            <span data-lang="en">Stop losing customers to “I forgot”.</span>
+            <span data-lang="ar">وقف خسارة الزبائن بسبب "نسيت".</span>
+          </small>
           <p>
-            We turn your repetitive tasks into flows that run in the background: reminders, re-engagement,
-            notifications, and simple internal processes.
+            <span data-lang="en">
+              We turn your repetitive tasks into flows that run in the background: reminders, re-engagement,
+              notifications, and simple internal processes.
+            </span>
+            <span data-lang="ar">
+              نحول المهام المتكررة لمسارات أتمتة تشتغل في الخلفية: تذكير، إعادة تواصل،
+              إشعارات، وإجراءات داخلية بسيطة.
+            </span>
           </p>
         </article>
 
         <article class="card">
-          <span class="tag">Business Systems</span>
-          <h3>Operating systems for small businesses</h3>
-          <small>Chatbot + CRM + calendar + tracking.</small>
+          <span class="tag">
+            <span data-lang="en">Business Systems</span>
+            <span data-lang="ar">نظام تشغيل للبيزنس</span>
+          </span>
+          <h3>
+            <span data-lang="en">Operating systems for small businesses</span>
+            <span data-lang="ar">نظام متكامل للمشاريع الصغيرة</span>
+          </h3>
+          <small>
+            <span data-lang="en">Chatbot + CRM + calendar + tracking.</span>
+            <span data-lang="ar">شات بوت + متابعة عملاء + جدول مواعيد + تتبّع.</span>
+          </small>
           <p>
-            A clean setup that connects everything: customer messages, bookings, notes, and follow-ups — so your
-            business feels organized instead of chaotic.
+            <span data-lang="en">
+              A clean setup that connects everything: customer messages, bookings, notes, and follow-ups — so your
+              business feels organized instead of chaotic.
+            </span>
+            <span data-lang="ar">
+              إعداد نظيف يربط كل شيء: رسائل العملاء، الحجوزات، الملاحظات والمتابعة —
+              عشان مشروعك يكون منظم بدل الفوضى.
+            </span>
           </p>
         </article>
 
         <article class="card ax-bot-card">
-          <span class="tag">Chatbot Demo</span>
-          <h3>AX Bot – your new assistant.</h3>
-          <small>Instant replies, 24/7 support, no extra staff.</small>
+          <span class="tag">
+            <span data-lang="en">Chatbot Demo</span>
+            <span data-lang="ar">تجربة AX Bot</span>
+          </span>
+          <h3>
+            <span data-lang="en">AX Bot – your new assistant.</span>
+            <span data-lang="ar">AX Bot — مساعدك الرقمي الجديد.</span>
+          </h3>
+          <small>
+            <span data-lang="en">Instant replies, 24/7 support, no extra staff.</span>
+            <span data-lang="ar">ردود فورية، دعم ٢٤/٧ بدون توظيف إضافي.</span>
+          </small>
           <p>
-            See how an AI assistant could greet your customers
-            and answer common questions automatically.
+            <span data-lang="en">
+              See how an AI assistant could greet your customers
+              and answer common questions automatically.
+            </span>
+            <span data-lang="ar">
+              جرّب كيف المساعد الذكي يرحّب بالعملاء ويجاوب على أسئلتهم المتكررة تلقائياً.
+            </span>
           </p>
-          <button class="btn-primary" id="ax-bot-demo-btn">Try Demo</button>
+          <button class="btn-primary" id="ax-bot-demo-btn">
+            <span data-lang="en">Try Demo</span>
+            <span data-lang="ar">جرّب البوت</span>
+          </button>
         </article>
       </div>
     </section>
 
     <!-- PROCESS -->
     <section id="process" class="section">
-      <h2>How it works</h2>
+      <h2>
+        <span data-lang="en">How it works</span>
+        <span data-lang="ar">كيف نشتغل معك</span>
+      </h2>
       <p class="section-intro">
-        Clear, lightweight process. No endless calls, no confusion.
+        <span data-lang="en">
+          Clear, lightweight process. No endless calls, no confusion.
+        </span>
+        <span data-lang="ar">
+          خطوات واضحة وخفيفة — بدون اجتماعات لا تنتهي ولا تعقيد.
+        </span>
       </p>
 
       <div class="process-steps">
         <div class="step">
-          <strong>1. Free automation audit (10 minutes)</strong>
-          <span>We look at how customers currently reach you and where time is being wasted.</span>
+          <strong>
+            <span data-lang="en">1. Free automation audit (10 minutes)</span>
+            <span data-lang="ar">١. مراجعة أتمتة مجانية (١٠ دقائق)</span>
+          </strong>
+          <span>
+            <span data-lang="en">
+              We look at how customers currently reach you and where time is being wasted.
+            </span>
+            <span data-lang="ar">
+              نشوف كيف الناس توصلك حالياً، وين يضيع وقتك، ووين أسهل مكان نبدأ منه.
+            </span>
+          </span>
         </div>
         <div class="step">
-          <strong>2. System design</strong>
-          <span>We map a simple automation flow based on your goals (more sales, more time, better organization).</span>
+          <strong>
+            <span data-lang="en">2. System design</span>
+            <span data-lang="ar">٢. تصميم النظام</span>
+          </strong>
+          <span>
+            <span data-lang="en">
+              We map a simple automation flow based on your goals (more sales, more time, better organization).
+            </span>
+            <span data-lang="ar">
+              نرسم مسار أتمتة بسيط مبني على هدفك: مبيعات أكثر، وقت أكثر، أو تنظيم أفضل.
+            </span>
+          </span>
         </div>
         <div class="step">
-          <strong>3. Installation & integration</strong>
-          <span>We connect chatbots, WhatsApp / IG, basic CRM, and workflows around your daily reality.</span>
+          <strong>
+            <span data-lang="en">3. Installation & integration</span>
+            <span data-lang="ar">٣. تركيب وربط النظام</span>
+          </strong>
+          <span>
+            <span data-lang="en">
+              We connect chatbots, WhatsApp / IG, basic CRM, and workflows around your daily reality.
+            </span>
+            <span data-lang="ar">
+              نركّب الشات بوت، نربطه بواتساب/إنستغرام، ونضيف نظام بسيط لمتابعة العملاء.
+            </span>
+          </span>
         </div>
         <div class="step">
-          <strong>4. Optimization (first 2–4 weeks)</strong>
-          <span>We watch how people use it and tune replies, steps, and triggers.</span>
+          <strong>
+            <span data-lang="en">4. Optimization (first 2–4 weeks)</span>
+            <span data-lang="ar">٤. تحسين أولي (أول ٢–٤ أسابيع)</span>
+          </strong>
+          <span>
+            <span data-lang="en">
+              We watch how people use it and tune replies, steps, and triggers.
+            </span>
+            <span data-lang="ar">
+              نراقب كيف الناس تستخدم النظام ونعدّل الرسائل والخطوات حسب الواقع.
+            </span>
+          </span>
         </div>
         <div class="step">
-          <strong>5. Monthly maintenance (optional)</strong>
-          <span>We keep the system updated as your business changes.</span>
+          <strong>
+            <span data-lang="en">5. Monthly maintenance (optional)</span>
+            <span data-lang="ar">٥. صيانة شهرية (اختيارية)</span>
+          </strong>
+          <span>
+            <span data-lang="en">
+              We keep the system updated as your business changes.
+            </span>
+            <span data-lang="ar">
+              نحافظ على تحديث النظام مع تغيّر المنيو، العروض أو طريقة شغلك.
+            </span>
+          </span>
         </div>
       </div>
     </section>
 
     <!-- PRICING -->
     <section id="pricing" class="section">
-      <h2>Simple pricing</h2>
+      <h2>
+        <span data-lang="en">Simple pricing</span>
+        <span data-lang="ar">أسعار واضحة</span>
+      </h2>
       <p class="section-intro">
-        Pricing can be adapted to LYD or USD. This is a simple structure you can grow with.
+        <span data-lang="en">
+          Pricing can be adapted to LYD or USD. This is a simple structure you can grow with.
+        </span>
+        <span data-lang="ar">
+          نشتغل بالدينار الليبي أو الدولار. هيكل أسعار بسيط تقدر تكبر عليه بعدين.
+        </span>
       </p>
 
       <div class="pricing-grid">
         <div class="price-card">
-          <div class="price-name">Starter</div>
-          <div class="price-tag">From $79 / 200–300 LYD</div>
+          <div class="price-name">
+            <span data-lang="en">Starter</span>
+            <span data-lang="ar">حزمة البداية</span>
+          </div>
+          <div class="price-tag">
+            <span data-lang="en">From $79 / 200–300 LYD</span>
+            <span data-lang="ar">ابتداءً من ٧٩$ / ٢٠٠–٣٠٠ دينار</span>
+          </div>
           <ul>
-            <li>Basic AI chatbot</li>
-            <li>FAQ replies</li>
-            <li>Lead capture</li>
+            <li>
+              <span data-lang="en">Basic AI chatbot</span>
+              <span data-lang="ar">شات بوت أساسي</span>
+            </li>
+            <li>
+              <span data-lang="en">FAQ replies</span>
+              <span data-lang="ar">ردود على الأسئلة المتكررة</span>
+            </li>
+            <li>
+              <span data-lang="en">Lead capture</span>
+              <span data-lang="ar">جمع بيانات العملاء المهتمين</span>
+            </li>
           </ul>
-          <div class="pill-inline">Ideal for testing automation on a single channel.</div>
+          <div class="pill-inline">
+            <span data-lang="en">Ideal for testing automation on a single channel.</span>
+            <span data-lang="ar">مثالية لتجربة الأتمتة على قناة واحدة.</span>
+          </div>
         </div>
 
         <div class="price-card">
-          <div class="price-name">Growth</div>
-          <div class="price-tag">From $149 / 350–500 LYD</div>
+          <div class="price-name">
+            <span data-lang="en">Growth</span>
+            <span data-lang="ar">حزمة النمو</span>
+          </div>
+          <div class="price-tag">
+            <span data-lang="en">From $149 / 350–500 LYD</span>
+            <span data-lang="ar">ابتداءً من ١٤٩$ / ٣٥٠–٥٠٠ دينار</span>
+          </div>
           <ul>
-            <li>Full chatbot + flows</li>
-            <li>Basic CRM & tagging</li>
-            <li>Simple bookings or orders</li>
-            <li>Light analytics</li>
+            <li>
+              <span data-lang="en">Full chatbot + flows</span>
+              <span data-lang="ar">شات بوت كامل + مسارات أتمتة</span>
+            </li>
+            <li>
+              <span data-lang="en">Basic CRM & tagging</span>
+              <span data-lang="ar">متابعة عملاء وتوسيم بسيط</span>
+            </li>
+            <li>
+              <span data-lang="en">Simple bookings or orders</span>
+              <span data-lang="ar">حجوزات أو طلبات بسيطة</span>
+            </li>
+            <li>
+              <span data-lang="en">Light analytics</span>
+              <span data-lang="ar">تحليلات أساسية</span>
+            </li>
           </ul>
-          <div class="pill-inline">Best for restaurants, gyms, clinics and local brands.</div>
+          <div class="pill-inline">
+            <span data-lang="en">Best for restaurants, gyms, clinics and local brands.</span>
+            <span data-lang="ar">أنسب للمطاعم، النوادي، العيادات والبراندات المحلية.</span>
+          </div>
         </div>
 
         <div class="price-card">
-          <div class="price-name">Scale</div>
-          <div class="price-tag">$249+ / custom</div>
+          <div class="price-name">
+            <span data-lang="en">Scale</span>
+            <span data-lang="ar">حزمة التوسّع</span>
+          </div>
+          <div class="price-tag">
+            <span data-lang="en">$249+ / custom</span>
+            <span data-lang="ar">٢٤٩$ فما فوق / حسب الطلب</span>
+          </div>
           <ul>
-            <li>Full automation system</li>
-            <li>Comment → DM → sale funnels</li>
-            <li>Advanced tracking & reports</li>
-            <li>Priority support</li>
+            <li>
+              <span data-lang="en">Full automation system</span>
+              <span data-lang="ar">نظام أتمتة متكامل</span>
+            </li>
+            <li>
+              <span data-lang="en">Comment → DM → sale funnels</span>
+              <span data-lang="ar">مسارات "تعليق → رسالة → عملية بيع"</span>
+            </li>
+            <li>
+              <span data-lang="en">Advanced tracking & reports</span>
+              <span data-lang="ar">تتبّع وتقارير متقدمة</span>
+            </li>
+            <li>
+              <span data-lang="en">Priority support</span>
+              <span data-lang="ar">دعم أولوية</span>
+            </li>
           </ul>
-          <div class="pill-inline">For serious operations that want a full AI-powered engine.</div>
+          <div class="pill-inline">
+            <span data-lang="en">For serious operations that want a full AI-powered engine.</span>
+            <span data-lang="ar">للمشاريع الجديّة اللي تبي محرك مبيعات كامل بالذكاء الاصطناعي.</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CASE STUDY -->
     <section id="case" class="section">
-      <h2>Case Study: Almansory Restaurant</h2>
+      <h2>
+        <span data-lang="en">Case Study: Almansory Restaurant</span>
+        <span data-lang="ar">دراسة حالة: مطعم المنصوري</span>
+      </h2>
       <p class="section-intro">
-        From manual replies and random posting to a simple automated system that ties content, DMs, and orders together.
+        <span data-lang="en">
+          From manual replies and random posting to a simple automated system that ties content, DMs, and orders together.
+        </span>
+        <span data-lang="ar">
+          من ردود يدوية وبوستات عشوائية لنظام بسيط يربط المحتوى، الرسائل والطلبات في مسار واحد واضح.
+        </span>
       </p>
 
       <div class="case-layout">
         <div class="case-col">
-          <h3>Before</h3>
+          <h3>
+            <span data-lang="en">Before</span>
+            <span data-lang="ar">قبل</span>
+          </h3>
           <ul>
-            <li>Owner replying to DMs manually between other tasks.</li>
-            <li>No clear way to track which posts brought customers.</li>
-            <li>Inconsistent response times and missed messages.</li>
+            <li>
+              <span data-lang="en">Owner replying to DMs manually between other tasks.</span>
+              <span data-lang="ar">الرسائل الخاصة يرد عليها صاحب المطعم بنفسه بين ألف شغلة.</span>
+            </li>
+            <li>
+              <span data-lang="en">No clear way to track which posts brought customers.</span>
+              <span data-lang="ar">مافيش تتبّع واضح لأي بوست جاب زبائن فعلاً.</span>
+            </li>
+            <li>
+              <span data-lang="en">Inconsistent response times and missed messages.</span>
+              <span data-lang="ar">أوقات رد مختلفة ورسائل تضيع بدون رد.</span>
+            </li>
           </ul>
         </div>
         <div class="case-col">
-          <h3>After AutomateX</h3>
+          <h3>
+            <span data-lang="en">After AutomateX</span>
+            <span data-lang="ar">بعد أوتوميتيكس</span>
+          </h3>
           <ul>
-            <li>Automated menu & basic FAQ replies.</li>
-            <li>Comment → DM → order flow using ManyChat.</li>
-            <li>Clearer understanding of what actually drives sales.</li>
+            <li>
+              <span data-lang="en">Automated menu & basic FAQ replies.</span>
+              <span data-lang="ar">منيو وأجوبة جاهزة تشتغل تلقائياً.</span>
+            </li>
+            <li>
+              <span data-lang="en">Comment → DM → order flow using ManyChat.</span>
+              <span data-lang="ar">مسار "تعليق → رسالة خاصة → طلب" باستخدام ManyChat.</span>
+            </li>
+            <li>
+              <span data-lang="en">Clearer understanding of what actually drives sales.</span>
+              <span data-lang="ar">صورة أوضح لأي محتوى فعلاً يجيب مبيعات.</span>
+            </li>
           </ul>
         </div>
         <div class="case-col">
-          <h3>System installed</h3>
+          <h3>
+            <span data-lang="en">System installed</span>
+            <span data-lang="ar">النظام المركّب</span>
+          </h3>
           <ul>
-            <li>Instagram + Facebook chatbot flows.</li>
-            <li>Simple lead/interest tracking.</li>
-            <li>Foundations for future campaigns and retargeting.</li>
+            <li>
+              <span data-lang="en">Instagram + Facebook chatbot flows.</span>
+              <span data-lang="ar">مسارات شات بوت لإنستغرام وفيسبوك.</span>
+            </li>
+            <li>
+              <span data-lang="en">Simple lead/interest tracking.</span>
+              <span data-lang="ar">تتبّع بسيط للاهتمام والعملاء المحتملين.</span>
+            </li>
+            <li>
+              <span data-lang="en">Foundations for future campaigns and retargeting.</span>
+              <span data-lang="ar">أساس قوي لحملات مستقبلية وإعادة استهداف.</span>
+            </li>
           </ul>
         </div>
       </div>
@@ -710,18 +1089,28 @@
 
     <!-- DEMO / CONTACT -->
     <section id="demo" class="section">
-      <h2>See it for your business</h2>
+      <h2>
+        <span data-lang="en">See it for your business</span>
+        <span data-lang="ar">شوف كيف يشتغل على مشروعك</span>
+      </h2>
       <div class="cta-box">
         <p>
-          In a 20-minute call, we’ll look at your current messages, traffic, and bottlenecks — then show you what can be
-          automated in the next 30 days.
+          <span data-lang="en">
+            In a 20-minute call, we’ll look at your current messages, traffic, and bottlenecks — then show you what can be
+            automated in the next 30 days.
+          </span>
+          <span data-lang="ar">
+            في مكالمة ٢٠ دقيقة، نشوف وضع الرسائل والتفاعل والاختناقات الحالية، وبعدين نوريك شنو نقدر نؤتمت خلال ٣٠ يوم.
+          </span>
         </p>
         <div class="cta-actions">
           <a class="btn-primary" href="https://wa.me/218918956478?text=I%20want%20an%20automation%20audit%20for%20my%20business" target="_blank" rel="noopener">
-            Book a free automation audit
+            <span data-lang="en">Book a free automation audit</span>
+            <span data-lang="ar">احجز مراجعة أتمتة مجانية</span>
           </a>
           <span style="font-size:0.85rem;color:var(--muted);">
-            Prefer email? Contact: automatex.ly@gmail.com
+            <span data-lang="en">Prefer email? Contact: automatex.ly@gmail.com</span>
+            <span data-lang="ar">تفضّل الإيميل؟ راسلنا على: automatex.ly@gmail.com</span>
           </span>
         </div>
       </div>
@@ -729,16 +1118,30 @@
 
     <!-- ABOUT FOUNDER -->
     <section id="about" class="section">
-      <h2>About AutomateX & the founder</h2>
+      <h2>
+        <span data-lang="en">About AutomateX & the founder</span>
+        <span data-lang="ar">عن أوتوميتيكس والمؤسس</span>
+      </h2>
       <p class="about-text">
-        AutomateX is an AI automation agency founded in 2021 by
-        <strong>Mohamed Alezabi</strong>, an AI automation specialist, content creator, and trainer.
-        He has built systems and automations for restaurants, gyms, and local brands, combining
-        social media experience with a deep focus on workflows and real-world results.
-        <br><br>
-        The mission is simple: give small businesses the kind of automation big companies pay thousands
-        for — in a way that is affordable, practical, and easy to use. Based in Libya, serving clients
-        across MENA and beyond.
+        <span data-lang="en">
+          AutomateX is an AI automation agency founded in 2021 by
+          <strong>Mohamed Alezabi</strong>, an AI automation specialist, content creator, and trainer.
+          He has built systems and automations for restaurants, gyms, and local brands, combining
+          social media experience with a deep focus on workflows and real-world results.
+          <br><br>
+          The mission is simple: give small businesses the kind of automation big companies pay thousands
+          for — in a way that is affordable, practical, and easy to use. Based in Libya, serving clients
+          across MENA and beyond.
+        </span>
+        <span data-lang="ar">
+          أوتوميتيكس هي وكالة أتمتة بالذكاء الاصطناعي تأسست في ٢٠٢١ على يد
+          <strong>محمد العزابـي</strong>، مختص في الأتمتة وصناعة المحتوى ومدرّب في مجال الذكاء الاصطناعي.
+          اشتغل على أنظمة لمطاعم، نوادي، و براندات محلية، وجمع بين خبرة السوشيال ميديا وترتيب
+          مسارات العمل لتحقيق نتائج حقيقية.
+          <br><br>
+          رسالتنا بسيطة: نعطي المشاريع الصغيرة نوع الأتمتة اللي عادةً بس الشركات الكبيرة تقدر تدفع عليه،
+          لكن بطريقة عملية، ميسورة وسهلة الاستخدام. مقرّنا في ليبيا، ونخدم عملاء في المنطقة وخارجها.
+        </span>
       </p>
     </section>
 
@@ -746,18 +1149,26 @@
     <div class="ax-chat-widget">
       <div class="ax-chat-header">
         <div class="ax-chat-avatar">AX</div>
-        <div class="ax-chat-meta">
-          <div class="ax-chat-title">AX Bot</div>
-          <div class="ax-chat-subtitle">AutomateX Assistant 🤖</div>
+        <div>
+          <div class="ax-chat-title">
+            <span data-lang="en">AX Bot</span>
+            <span data-lang="ar">AX Bot</span>
+          </div>
+          <div class="ax-chat-subtitle">
+            <span data-lang="en">AutomateX Assistant 🤖</span>
+            <span data-lang="ar">مساعد أوتوميتيكس 🤖</span>
+          </div>
         </div>
       </div>
 
       <div class="ax-chat-body">
         <div class="ax-chat-bubble ax-chat-bubble-bot">
-          Hey! I’m the system that answers your customers 24/7.
+          <span data-lang="en">Hey! I’m the system that answers your customers 24/7.</span>
+          <span data-lang="ar">هلا! أنا النظام اللي يرد على عملاءك ٢٤/٧ بدالك.</span>
         </div>
         <div class="ax-chat-bubble">
-          Want to see what we can automate for your business?
+          <span data-lang="en">Want to see what we can automate for your business?</span>
+          <span data-lang="ar">حاب تشوف شنو نقدر نؤتمت في مشروعك؟</span>
         </div>
 
         <div class="ax-typing">
@@ -766,19 +1177,23 @@
       </div>
 
       <button class="ax-chat-cta" id="ax-bot-widget-btn">
-        Try Demo
+        <span data-lang="en">Try AX Bot Demo</span>
+        <span data-lang="ar">جرّب AX Bot</span>
       </button>
 
       <div class="ax-chat-note">
-        (Real interactive chat coming soon.)
+        <span data-lang="en">(Interactive demo coming soon.)</span>
+        <span data-lang="ar">(نسخة تفاعلية قيد التجهيز.)</span>
       </div>
     </div>
 
     <footer>
-      Let your business run on autopilot. 🤖
+      <span data-lang="en">Let your business run on autopilot. 🤖</span>
+      <span data-lang="ar">خلّي البيزنس يتصرف بروحه. 🤖</span>
       |
       <a href="https://instagram.com/automatex.ly" target="_blank" style="color: inherit; text-decoration: none;">
-        Instagram
+        <span data-lang="en">Instagram</span>
+        <span data-lang="ar">إنستغرام</span>
       </a>
       |
       © <span id="year"></span> AutomateX
@@ -787,7 +1202,35 @@
   </div>
 
   <script>
+    // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Language switch logic
+    const langButtons = document.querySelectorAll("[data-switch-lang]");
+
+    function setLanguage(lang) {
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+
+      langButtons.forEach(btn => {
+        const btnLang = btn.getAttribute("data-switch-lang");
+        if (btnLang === lang) {
+          btn.classList.add("lang-btn-active");
+        } else {
+          btn.classList.remove("lang-btn-active");
+        }
+      });
+    }
+
+    langButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-switch-lang");
+        setLanguage(lang);
+      });
+    });
+
+    // Default to EN on load
+    setLanguage("en");
   </script>
 </body>
 </html>
