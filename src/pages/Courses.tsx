@@ -92,11 +92,11 @@ export default function Courses() {
                                     <span className="flex items-center gap-2"><BookOpen className="w-4 h-4 text-white/60" /> {course.modules} Modules</span>
                                 </div>
 
-                                <Link href={`/courses/${course.id}`} className="block w-full relative z-10">
-                                    <Button className="w-full h-12 rounded-xl bg-white text-black hover:bg-white/90 font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-                                        <PlayCircle className="w-5 h-5 mr-2" /> Start Course
-                                    </Button>
-                                </Link>
+                                <Button asChild className="relative z-10 w-full h-12 rounded-xl bg-white text-black hover:bg-white/90 font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                                    <Link href={`/courses/${course.id}`}>
+                                        <div className="flex items-center justify-center w-full"><PlayCircle className="w-5 h-5 mr-2" /> Start Course</div>
+                                    </Link>
+                                </Button>
                             </div>
                         </motion.div>
                     ))}

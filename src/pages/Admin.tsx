@@ -167,7 +167,7 @@ export default function Admin() {
 
             {/* Main App Content Area */}
             <div className="flex-1 overflow-y-auto bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')] bg-cover bg-center bg-fixed bg-no-repeat relative">
-                <div className="absolute inset-0 bg-background/95 backdrop-blur-[100px]" />
+                <div className="absolute inset-0 bg-background/95 backdrop-blur-3xl" />
 
                 <div className="relative z-10 p-8 md:p-12 max-w-7xl mx-auto">
                     <header className="flex justify-between items-end mb-12">

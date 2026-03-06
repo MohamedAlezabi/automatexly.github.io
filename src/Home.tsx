@@ -102,11 +102,11 @@ export default function Home() {
               Admin
             </Button>
           </Link>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-            <Button size="sm" className="bg-white text-black hover:bg-white/90 rounded-full font-semibold shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+          <Button asChild size="sm" className="bg-white text-black hover:bg-white/90 rounded-full font-semibold shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
               Start Now
-            </Button>
-          </a>
+            </a>
+          </Button>
         </div>
       </nav>
 
@@ -141,16 +141,16 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-30 pointer-events-auto"
           >
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="h-14 px-8 rounded-full bg-white text-black hover:bg-white/90 font-bold text-lg glow-brand hover:scale-105 transition-all">
+            <Button asChild size="lg" className="h-14 px-8 rounded-full bg-white text-black hover:bg-white/90 font-bold text-lg glow-brand hover:scale-105 transition-all">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 Build My System <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
-            <Link href="/courses">
-              <Button size="lg" variant="outline" className="h-14 px-8 rounded-full border-white/20 bg-background/50 backdrop-blur-md hover:bg-white/10 font-bold text-lg transition-all">
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="h-14 px-8 rounded-full border-white/20 bg-background/50 backdrop-blur-md hover:bg-white/10 font-bold text-lg transition-all">
+              <Link href="/courses">
                 <Play className="mr-2 w-5 h-5" /> View Academy
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </motion.div>
         </motion.div>
 
@@ -297,11 +297,11 @@ export default function Home() {
                       ))}
                     </ul>
 
-                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
-                      <Button className={`w-full h-12 rounded-xl font-bold transition-all ${tier.popular ? 'bg-gradient-brand text-white glow-brand hover:scale-[1.02]' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+                    <Button asChild className={`w-full h-12 rounded-xl font-bold transition-all ${tier.popular ? 'bg-gradient-brand text-white glow-brand hover:scale-[1.02]' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                         Get Started
-                      </Button>
-                    </a>
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </motion.div>
