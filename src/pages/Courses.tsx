@@ -41,17 +41,25 @@ export default function Courses() {
     const [courses, setCourses] = useState(DUMMY_COURSES);
 
     return (
-        <div className="min-h-screen pt-24 pb-20">
-            <div className="container max-w-6xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+        <div className="min-h-screen pt-32 pb-20 relative overflow-hidden bg-background">
+            <div className="aurora-bg" />
+
+            <div className="container max-w-7xl mx-auto relative z-10 px-6">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-16">
                     <div>
-                        <Badge variant="secondary" className="mb-4">AutomateX Academy</Badge>
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4">Master Systems & AI</h1>
-                        <p className="text-xl text-muted-foreground max-w-2xl">
+                        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
+                            <span className="text-sm font-bold text-white/70 tracking-widest uppercase">AutomateX Academy</span>
+                        </motion.div>
+                        <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter">Master Systems <br /><span className="text-gradient">& AI Architecture.</span></h1>
+                        <p className="text-xl text-white/50 max-w-2xl font-light">
                             ALX-style cohort-based learning. Go from beginner to automation architect through practical, peer-reviewed engineering projects.
                         </p>
                     </div>
-                    <Button className="mt-6 md:mt-0 gradient-purple">My Dashboard</Button>
+                    <Link href="/">
+                        <Button size="lg" className="mt-8 md:mt-0 h-14 px-8 rounded-xl bg-gradient-brand text-white font-bold glow-brand hover:scale-105 transition-all">
+                            Return to OS
+                        </Button>
+                    </Link>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -61,30 +69,35 @@ export default function Courses() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
+                            className="h-full"
                         >
-                            <Card className="h-full group hover:border-primary/50 transition-all overflow-hidden flex flex-col">
-                                <div className={`h-32 bg-gradient-to-br ${course.color} opacity-80 group-hover:opacity-100 transition-opacity`} />
-                                <CardHeader>
-                                    <div className="flex justify-between items-start mb-2">
-                                        <Badge variant="outline">{course.level}</Badge>
+                            <div className="bento-card h-full p-8 flex flex-col group relative overflow-hidden">
+                                <div className={`absolute -top-32 -right-32 w-64 h-64 rounded-full bg-gradient-to-br ${course.color} blur-[100px] opacity-20 group-hover:opacity-40 transition-opacity duration-700`} />
+
+                                <div className="flex justify-between items-start mb-6 relative z-10">
+                                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${course.color} bg-opacity-10 flex items-center justify-center border border-white/10 shadow-lg`}>
+                                        <BookOpen className="w-5 h-5 text-white" />
                                     </div>
-                                    <CardTitle className="text-2xl">{course.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-1 flex flex-col">
-                                    <CardDescription className="mb-6 flex-1 text-base">
-                                        {course.description}
-                                    </CardDescription>
-                                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-                                        <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {course.duration}</span>
-                                        <span className="flex items-center gap-1"><BookOpen className="w-4 h-4" /> {course.modules} Modules</span>
-                                    </div>
-                                    <Button asChild className="w-full" variant="secondary">
-                                        <Link href={`/courses/${course.id}`}>
-                                            <PlayCircle className="w-4 h-4 mr-2" /> Start Course
-                                        </Link>
+                                    <Badge variant="outline" className="border-white/10 bg-white/5 backdrop-blur-md text-white/80">{course.level}</Badge>
+                                </div>
+
+                                <h3 className="text-2xl font-bold mb-3 relative z-10">{course.title}</h3>
+
+                                <p className="text-white/50 text-sm mb-8 flex-1 relative z-10 leading-relaxed">
+                                    {course.description}
+                                </p>
+
+                                <div className="flex items-center gap-6 text-sm text-white/40 mb-8 font-medium font-mono border-t border-white/5 pt-6 relative z-10">
+                                    <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-white/60" /> {course.duration}</span>
+                                    <span className="flex items-center gap-2"><BookOpen className="w-4 h-4 text-white/60" /> {course.modules} Modules</span>
+                                </div>
+
+                                <Link href={`/courses/${course.id}`} className="block w-full relative z-10">
+                                    <Button className="w-full h-12 rounded-xl bg-white text-black hover:bg-white/90 font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                                        <PlayCircle className="w-5 h-5 mr-2" /> Start Course
                                     </Button>
-                                </CardContent>
-                            </Card>
+                                </Link>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

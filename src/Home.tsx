@@ -87,26 +87,26 @@ export default function Home() {
         <div className="hidden md:flex items-center gap-8 px-8">
           <a href="#services" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Services</a>
           <a href="#pricing" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Pricing</a>
-          <Link href="/courses">
-            <span className="text-sm font-medium text-white/70 hover:text-white transition-colors cursor-pointer">Academy</span>
+          <Link href="/courses" className="text-sm font-medium text-white/70 hover:text-white transition-colors cursor-pointer">
+            Academy
           </Link>
-          <Link href="/resources">
-            <span className="text-sm font-medium text-white/70 hover:text-white transition-colors cursor-pointer">Resources</span>
+          <Link href="/resources" className="text-sm font-medium text-white/70 hover:text-white transition-colors cursor-pointer">
+            Resources
           </Link>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 relative z-20 pointer-events-auto">
           <LanguageToggle />
           <Link href="/admin">
             <Button variant="outline" size="sm" className="hidden sm:flex border-white/10 hover:bg-white/5 backdrop-blur-md rounded-full">
               Admin
             </Button>
           </Link>
-          <Button asChild size="sm" className="bg-white text-black hover:bg-white/90 rounded-full font-semibold shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <Button size="sm" className="bg-white text-black hover:bg-white/90 rounded-full font-semibold shadow-[0_0_20px_rgba(255,255,255,0.3)]">
               Start Now
-            </a>
-          </Button>
+            </Button>
+          </a>
         </div>
       </nav>
 
@@ -139,18 +139,18 @@ export default function Home() {
 
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-30 pointer-events-auto"
           >
-            <Button asChild size="lg" className="h-14 px-8 rounded-full bg-white text-black hover:bg-white/90 font-bold text-lg glow-brand hover:scale-105 transition-all">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="h-14 px-8 rounded-full bg-white text-black hover:bg-white/90 font-bold text-lg glow-brand hover:scale-105 transition-all">
                 Build My System <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="h-14 px-8 rounded-full border-white/20 bg-background/50 backdrop-blur-md hover:bg-white/10 font-bold text-lg transition-all">
-              <Link href="/courses">
+              </Button>
+            </a>
+            <Link href="/courses">
+              <Button size="lg" variant="outline" className="h-14 px-8 rounded-full border-white/20 bg-background/50 backdrop-blur-md hover:bg-white/10 font-bold text-lg transition-all">
                 <Play className="mr-2 w-5 h-5" /> View Academy
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -297,9 +297,11 @@ export default function Home() {
                       ))}
                     </ul>
 
-                    <Button asChild className={`w-full h-12 rounded-xl font-bold ${tier.popular ? 'bg-gradient-brand text-white glow-brand' : 'bg-white/10 text-white hover:bg-white/20'}`}>
-                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Get Started</a>
-                    </Button>
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
+                      <Button className={`w-full h-12 rounded-xl font-bold transition-all ${tier.popular ? 'bg-gradient-brand text-white glow-brand hover:scale-[1.02]' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+                        Get Started
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </motion.div>

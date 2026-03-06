@@ -13,6 +13,12 @@ export default function Admin() {
     const [subscribers, setSubscribers] = useState<any[]>([]);
     const [, setLocation] = useLocation();
 
+    // Auth Form State
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isLoggingIn, setIsLoggingIn] = useState(false);
+    const [authError, setAuthError] = useState('');
+
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
             setSession(session);
@@ -38,11 +44,18 @@ export default function Admin() {
         if (data) setSubscribers(data);
     };
 
-    const handleLogin = async () => {
-        const email = prompt("Admin Email:");
-        const password = prompt("Admin Password:");
-        if (email && password) {
-            await supabase.auth.signInWithPassword({ email, password });
+    const handleLogin = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setAuthError('');
+        setIsLoggingIn(true);
+        try {
+            const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+            if (error) throw error;
+            // checkAdminStatus is handled by the useEffect listener!
+        } catch (error: any) {
+            setAuthError(error.message || 'Failed to authenticate');
+        } finally {
+            setIsLoggingIn(false);
         }
     };
 
@@ -80,9 +93,43 @@ export default function Admin() {
                         <h1 className="text-2xl font-black tracking-tight mb-2">AutomateX Core</h1>
                         <p className="text-sm text-white/50">Restricted System Access</p>
                     </div>
-                    <Button className="w-full h-14 rounded-xl font-bold bg-white text-black hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.2)]" onClick={handleLogin}>
-                        Authenticate Identity
-                    </Button>
+
+                    <form onSubmit={handleLogin} className="space-y-4 relative z-10">
+                        {authError && <div className="p-3 bg-red-500/10 border border-red-500/50 rounded-lg text-red-500 text-sm text-center font-medium">{authError}</div>}
+
+                        <div className="space-y-1">
+                            <label className="text-xs font-bold text-white/50 uppercase tracking-wider">Authentication Email</label>
+                            <input
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="w-full h-12 bg-black/50 border border-white/10 rounded-xl px-4 text-white placeholder:text-white/20 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                                placeholder="admin@automatexly.com"
+                                required
+                            />
+                        </div>
+                        <div className="space-y-1">
+                            <label className="text-xs font-bold text-white/50 uppercase tracking-wider">Secure Passphrase</label>
+                            <input
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="w-full h-12 bg-black/50 border border-white/10 rounded-xl px-4 text-white placeholder:text-white/20 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                                placeholder="••••••••••••"
+                                required
+                            />
+                        </div>
+
+                        <Button type="submit" disabled={isLoggingIn} className="w-full h-14 mt-4 rounded-xl font-bold bg-white text-black hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.2)] disabled:opacity-50">
+                            {isLoggingIn ? 'Verifying Identity...' : 'Authenticate'}
+                        </Button>
+                    </form>
+
+                    <div className="mt-8 pt-6 border-t border-white/10 relative z-10">
+                        <p className="text-xs text-center text-white/40">
+                            Super Admin credentials required. <br />Ensure your Auth ID is mapped to <code className="text-primary bg-primary/10 px-1 py-0.5 rounded">role: 'admin'</code> in the Profiles architecture.
+                        </p>
+                    </div>
                 </motion.div>
             </div>
         );
