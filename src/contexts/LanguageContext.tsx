@@ -19,14 +19,14 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.caseStudy': 'Case Study',
     'nav.resources': 'Resources',
     'nav.about': 'About',
-    
+
     // Hero
     'hero.title': 'Run Your Business on Autopilot',
     'hero.subtitle': "Libya's first AI-powered systems agency. We build chatbots, workflows, and business systems that save time, increase sales, and handle customers 24/7.",
     'hero.cta.primary': 'Get Started on WhatsApp',
     'hero.cta.secondary': 'Book Free Audit',
     'hero.badge': 'Est. 2021 • 12+ Active Clients • Libya\'s Pioneer',
-    
+
     // Core Pillars
     'pillars.title': 'Four Core Pillars',
     'pillars.subtitle': 'A complete ecosystem built to teach, automate, and inspire',
@@ -38,7 +38,7 @@ const translations: Record<Language, Record<string, string>> = {
     'pillars.consultation.desc': 'Workshops, mentorship, and AI education',
     'pillars.systems.title': 'Systems',
     'pillars.systems.desc': 'Thought leadership and systemic thinking',
-    
+
     // Services
     'services.title': 'What We Build',
     'services.subtitle': 'Simple, powerful systems for real businesses',
@@ -48,7 +48,7 @@ const translations: Record<Language, Record<string, string>> = {
     'services.workflows.desc': 'Stop losing customers to "I forgot". Turn repetitive tasks into automated flows: reminders, re-engagement, notifications, and internal processes.',
     'services.systems.title': 'Business Systems',
     'services.systems.desc': 'A clean setup connecting everything: customer messages, bookings, notes, and follow-ups—so your business feels organized instead of chaotic.',
-    
+
     // Process
     'process.title': 'How It Works',
     'process.subtitle': 'Clear, lightweight process. No endless calls, no confusion.',
@@ -62,34 +62,91 @@ const translations: Record<Language, Record<string, string>> = {
     'process.step4.desc': 'We tune replies, steps, and triggers over 2-4 weeks',
     'process.step5.title': 'Maintenance',
     'process.step5.desc': 'Optional monthly updates as your business changes',
-    
+
     // Pricing
     'pricing.title': 'Simple Pricing',
     'pricing.subtitle': 'Transparent pricing you can grow with',
-    'pricing.starter.title': 'Starter',
-    'pricing.starter.price': '$79',
-    'pricing.starter.priceAlt': '200-300 LYD',
-    'pricing.starter.desc': 'Ideal for testing automation on a single channel',
-    'pricing.starter.feat1': 'Basic AI chatbot',
-    'pricing.starter.feat2': 'FAQ replies',
-    'pricing.starter.feat3': 'Lead capture',
-    'pricing.growth.title': 'Growth',
-    'pricing.growth.price': '$149',
-    'pricing.growth.priceAlt': '350-500 LYD',
-    'pricing.growth.desc': 'Best for restaurants, gyms, clinics and local brands',
-    'pricing.growth.feat1': 'Full chatbot + flows',
-    'pricing.growth.feat2': 'Basic CRM & tagging',
-    'pricing.growth.feat3': 'Simple bookings or orders',
-    'pricing.growth.feat4': 'Light analytics',
-    'pricing.scale.title': 'Scale',
-    'pricing.scale.price': '$249+',
-    'pricing.scale.priceAlt': 'Custom',
-    'pricing.scale.desc': 'For serious operations that want a full AI-powered engine',
-    'pricing.scale.feat1': 'Full automation system',
-    'pricing.scale.feat2': 'Advanced tracking & reports',
-    'pricing.scale.feat3': 'Comment → DM → sale funnels',
-    'pricing.scale.feat4': 'Priority support',
-    
+    // Pricing (AutomateX / Systems & Tools)
+    'pricing.ax.starter.title': 'Starter System',
+    'pricing.ax.starter.price': '250 LYD',
+    'pricing.ax.starter.priceAlt': 'Monthly',
+    'pricing.ax.starter.desc': 'Ideal for testing automation on a single channel',
+    'pricing.ax.starter.feat1': 'Basic AI chatbot',
+    'pricing.ax.starter.feat2': 'FAQ replies',
+    'pricing.ax.starter.feat3': 'Lead capture',
+
+    'pricing.ax.growth.title': 'Growth System',
+    'pricing.ax.growth.price': '450 LYD',
+    'pricing.ax.growth.priceAlt': 'Monthly',
+    'pricing.ax.growth.desc': 'Best for restaurants, gyms, clinics and local brands',
+    'pricing.ax.growth.feat1': 'Full chatbot + flows',
+    'pricing.ax.growth.feat2': 'Basic CRM & tagging',
+    'pricing.ax.growth.feat3': 'Simple bookings or orders',
+    'pricing.ax.growth.feat4': 'Light analytics',
+
+    'pricing.ax.scale.title': 'Scale System',
+    'pricing.ax.scale.price': '800 LYD',
+    'pricing.ax.scale.priceAlt': 'Monthly',
+    'pricing.ax.scale.desc': 'For serious operations that want a full AI-powered engine',
+    'pricing.ax.scale.feat1': 'Full automation system',
+    'pricing.ax.scale.feat2': 'Advanced tracking & reports',
+    'pricing.ax.scale.feat3': 'Comment → DM → sale funnels',
+    'pricing.ax.scale.feat4': 'Priority support',
+
+    // Pricing (AX Media / SMM)
+    'pricing.media.starter.title': 'Content Starter',
+    'pricing.media.starter.price': '350 LYD',
+    'pricing.media.starter.priceAlt': 'Monthly',
+    'pricing.media.starter.desc': 'Essential social media presence',
+    'pricing.media.starter.feat1': '8 Posts per month',
+    'pricing.media.starter.feat2': 'Basic graphic design',
+    'pricing.media.starter.feat3': '1 Platform management',
+
+    'pricing.media.growth.title': 'Media Pro',
+    'pricing.media.growth.price': '700 LYD',
+    'pricing.media.growth.priceAlt': 'Monthly',
+    'pricing.media.growth.desc': 'Comprehensive content and video strategy',
+    'pricing.media.growth.feat1': '15 Posts + 4 Reels',
+    'pricing.media.growth.feat2': 'Professional video editing',
+    'pricing.media.growth.feat3': '2 Platforms management',
+    'pricing.media.growth.feat4': 'Monthly performance report',
+
+    'pricing.media.scale.title': 'Agency Pipeline',
+    'pricing.media.scale.price': '1200 LYD',
+    'pricing.media.scale.priceAlt': 'Monthly',
+    'pricing.media.scale.desc': 'Full-scale marketing engine',
+    'pricing.media.scale.feat1': 'Daily content + 8 Reels',
+    'pricing.media.scale.feat2': 'Ad campaign management',
+    'pricing.media.scale.feat3': 'Content strategy consulting',
+    'pricing.media.scale.feat4': 'All platforms covered',
+
+    // Pricing (AX Training)
+    'pricing.training.starter.title': 'Crash Course',
+    'pricing.training.starter.price': '150 LYD',
+    'pricing.training.starter.priceAlt': 'One-time',
+    'pricing.training.starter.desc': 'Introduction to AI and Automation',
+    'pricing.training.starter.feat1': '3-hour intensive session',
+    'pricing.training.starter.feat2': 'Basic AI tools overview',
+    'pricing.training.starter.feat3': 'Certificate of completion',
+
+    'pricing.training.growth.title': 'Pro Workshop',
+    'pricing.training.growth.price': '400 LYD',
+    'pricing.training.growth.priceAlt': 'One-time',
+    'pricing.training.growth.desc': 'Deep dive into building your own systems',
+    'pricing.training.growth.feat1': '2-day workshop',
+    'pricing.training.growth.feat2': 'Build a chatbot live',
+    'pricing.training.growth.feat3': 'Access to resource portal',
+    'pricing.training.growth.feat4': '1-on-1 Q&A session',
+
+    'pricing.training.scale.title': 'Corporate Training',
+    'pricing.training.scale.price': 'Custom',
+    'pricing.training.scale.priceAlt': 'Per Team',
+    'pricing.training.scale.desc': 'Transform your entire team’s workflow',
+    'pricing.training.scale.feat1': 'Customized curriculum',
+    'pricing.training.scale.feat2': 'On-site training available',
+    'pricing.training.scale.feat3': 'Company-wide system audits',
+    'pricing.training.scale.feat4': 'Post-training support',
+
     // Case Study
     'case.title': 'Case Study: Almansory Restaurant',
     'case.subtitle': 'From manual replies to automated system',
@@ -105,7 +162,7 @@ const translations: Record<Language, Record<string, string>> = {
     'case.system.item1': 'Instagram + Facebook chatbot flows',
     'case.system.item2': 'Simple lead/interest tracking',
     'case.system.item3': 'Foundations for future campaigns',
-    
+
     // About
     'about.title': 'About AutomateX',
     'about.mission': 'Mission',
@@ -128,7 +185,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.values.impact.desc': 'We aim to transform workflows, businesses, and mindsets.',
     'about.values.integrity': 'Integrity',
     'about.values.integrity.desc': 'Calm, confident, and transparent in every decision.',
-    
+
     // Resources
     'resources.title': 'Free Resources',
     'resources.subtitle': 'Starter resources to test automation and use AI with clear structure',
@@ -138,13 +195,13 @@ const translations: Record<Language, Record<string, string>> = {
     'resources.downloads.desc': 'Automation pack, social engine blueprint, and starter guides',
     'resources.templates.title': 'Template Store',
     'resources.templates.desc': 'Coming soon: Ready-made systems for restaurants, gyms, and service businesses',
-    
+
     // CTA
     'cta.title': 'Ready to Automate Your Business?',
     'cta.subtitle': 'Book a free 20-minute automation audit. We\'ll show you what can be automated in the next 30 days.',
     'cta.button': 'Book Free Audit',
     'cta.email': 'Or email us at',
-    
+
     // Footer
     'footer.tagline': 'System, not chaos.',
     'footer.rights': '© 2025 AutomateX. All rights reserved.',
@@ -157,14 +214,14 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.caseStudy': 'دراسة حالة',
     'nav.resources': 'الموارد',
     'nav.about': 'عن الشركة',
-    
+
     // Hero
     'hero.title': 'شغّل عملك بشكل تلقائي',
     'hero.subtitle': 'أول وكالة أنظمة مدعومة بالذكاء الاصطناعي في ليبيا. نبني روبوتات المحادثة وسير العمل وأنظمة الأعمال التي توفر الوقت وتزيد المبيعات وتتعامل مع العملاء على مدار الساعة.',
     'hero.cta.primary': 'ابدأ على واتساب',
     'hero.cta.secondary': 'احجز تدقيق مجاني',
     'hero.badge': 'تأسست 2021 • 12+ عميل نشط • رائدة ليبيا',
-    
+
     // Core Pillars
     'pillars.title': 'أربع ركائز أساسية',
     'pillars.subtitle': 'نظام بيئي كامل مبني للتعليم والأتمتة والإلهام',
@@ -176,7 +233,7 @@ const translations: Record<Language, Record<string, string>> = {
     'pillars.consultation.desc': 'ورش العمل والإرشاد والتعليم في مجال الذكاء الاصطناعي',
     'pillars.systems.title': 'الأنظمة',
     'pillars.systems.desc': 'القيادة الفكرية والتفكير المنهجي',
-    
+
     // Services
     'services.title': 'ما نبنيه',
     'services.subtitle': 'أنظمة بسيطة وقوية للأعمال الحقيقية',
@@ -186,7 +243,7 @@ const translations: Record<Language, Record<string, string>> = {
     'services.workflows.desc': 'توقف عن فقدان العملاء بسبب "نسيت". حوّل المهام المتكررة إلى تدفقات تلقائية: التذكيرات وإعادة المشاركة والإشعارات والعمليات الداخلية.',
     'services.systems.title': 'أنظمة الأعمال',
     'services.systems.desc': 'إعداد نظيف يربط كل شيء: رسائل العملاء والحجوزات والملاحظات والمتابعات—حتى يشعر عملك بالتنظيم بدلاً من الفوضى.',
-    
+
     // Process
     'process.title': 'كيف يعمل',
     'process.subtitle': 'عملية واضحة وخفيفة. لا مكالمات لا نهاية لها، لا ارتباك.',
@@ -200,34 +257,91 @@ const translations: Record<Language, Record<string, string>> = {
     'process.step4.desc': 'نضبط الردود والخطوات والمحفزات على مدى 2-4 أسابيع',
     'process.step5.title': 'الصيانة',
     'process.step5.desc': 'تحديثات شهرية اختيارية مع تغير عملك',
-    
+
     // Pricing
     'pricing.title': 'أسعار بسيطة',
     'pricing.subtitle': 'أسعار شفافة يمكنك النمو معها',
-    'pricing.starter.title': 'البداية',
-    'pricing.starter.price': '79$',
-    'pricing.starter.priceAlt': '200-300 دينار ليبي',
-    'pricing.starter.desc': 'مثالي لاختبار الأتمتة على قناة واحدة',
-    'pricing.starter.feat1': 'روبوت محادثة ذكي أساسي',
-    'pricing.starter.feat2': 'ردود الأسئلة الشائعة',
-    'pricing.starter.feat3': 'التقاط العملاء المحتملين',
-    'pricing.growth.title': 'النمو',
-    'pricing.growth.price': '149$',
-    'pricing.growth.priceAlt': '350-500 دينار ليبي',
-    'pricing.growth.desc': 'الأفضل للمطاعم والصالات الرياضية والعيادات والعلامات التجارية المحلية',
-    'pricing.growth.feat1': 'روبوت محادثة كامل + تدفقات',
-    'pricing.growth.feat2': 'إدارة علاقات العملاء الأساسية والوسم',
-    'pricing.growth.feat3': 'حجوزات أو طلبات بسيطة',
-    'pricing.growth.feat4': 'تحليلات خفيفة',
-    'pricing.scale.title': 'التوسع',
-    'pricing.scale.price': '249$+',
-    'pricing.scale.priceAlt': 'مخصص',
-    'pricing.scale.desc': 'للعمليات الجادة التي تريد محركًا كاملاً مدعومًا بالذكاء الاصطناعي',
-    'pricing.scale.feat1': 'نظام أتمتة كامل',
-    'pricing.scale.feat2': 'تتبع وتقارير متقدمة',
-    'pricing.scale.feat3': 'تعليق → رسالة مباشرة → قمع مبيعات',
-    'pricing.scale.feat4': 'دعم ذو أولوية',
-    
+    // Pricing (AutomateX / Systems & Tools)
+    'pricing.ax.starter.title': 'نظام البداية',
+    'pricing.ax.starter.price': '250 دينار ליבי',
+    'pricing.ax.starter.priceAlt': 'شهرياً',
+    'pricing.ax.starter.desc': 'مثالي لاختبار الأتمتة على قناة واحدة',
+    'pricing.ax.starter.feat1': 'روبوت محادثة ذكي أساسي',
+    'pricing.ax.starter.feat2': 'ردود الأسئلة الشائعة',
+    'pricing.ax.starter.feat3': 'التقاط العملاء المحتملين',
+
+    'pricing.ax.growth.title': 'نظام النمو',
+    'pricing.ax.growth.price': '450 دينار ליבי',
+    'pricing.ax.growth.priceAlt': 'شهرياً',
+    'pricing.ax.growth.desc': 'الأفضل للمطاعم والصالات الرياضية والعيادات',
+    'pricing.ax.growth.feat1': 'روبوت محادثة كامل + تدفقات',
+    'pricing.ax.growth.feat2': 'إدارة علاقات العملاء الأساسية',
+    'pricing.ax.growth.feat3': 'حجوزات أو طلبات بسيطة',
+    'pricing.ax.growth.feat4': 'تحليلات خفيفة',
+
+    'pricing.ax.scale.title': 'نظام التوسع',
+    'pricing.ax.scale.price': '800 دينار ליבי',
+    'pricing.ax.scale.priceAlt': 'شهرياً',
+    'pricing.ax.scale.desc': 'للعمليات الجادة التي تريد محركًا كاملاً',
+    'pricing.ax.scale.feat1': 'نظام أتمتة كامل',
+    'pricing.ax.scale.feat2': 'تتبع وتقارير متقدمة',
+    'pricing.ax.scale.feat3': 'تعليق → رسالة مباشرة → قمع مبيعات',
+    'pricing.ax.scale.feat4': 'دعم ذو أولوية',
+
+    // Pricing (AX Media / SMM)
+    'pricing.media.starter.title': 'بداية المحتوى',
+    'pricing.media.starter.price': '350 دينار ליבי',
+    'pricing.media.starter.priceAlt': 'شهرياً',
+    'pricing.media.starter.desc': 'التواجد الأساسي على وسائل التواصل',
+    'pricing.media.starter.feat1': '8 منشورات شهرياً',
+    'pricing.media.starter.feat2': 'تصميم جرافيك أساسي',
+    'pricing.media.starter.feat3': 'إدارة منصة واحدة',
+
+    'pricing.media.growth.title': 'ميديا برو',
+    'pricing.media.growth.price': '700 دينار ליבי',
+    'pricing.media.growth.priceAlt': 'شهرياً',
+    'pricing.media.growth.desc': 'استراتيجية شاملة للمحتوى والفيديو',
+    'pricing.media.growth.feat1': '15 منشوراً + 4 مقاطع ريلز',
+    'pricing.media.growth.feat2': 'تحرير فيديو احترافي',
+    'pricing.media.growth.feat3': 'إدارة منصتين',
+    'pricing.media.growth.feat4': 'تقرير أداء شهري',
+
+    'pricing.media.scale.title': 'حزمة الوكالة',
+    'pricing.media.scale.price': '1200 دينار ליבי',
+    'pricing.media.scale.priceAlt': 'شهرياً',
+    'pricing.media.scale.desc': 'محرك تسويق متكامل',
+    'pricing.media.scale.feat1': 'محتوى يومي + 8 مقاطع ريلز',
+    'pricing.media.scale.feat2': 'إدارة الحملات الإعلانية',
+    'pricing.media.scale.feat3': 'استشارات استراتيجية المحتوى',
+    'pricing.media.scale.feat4': 'تغطية جميع المنصات',
+
+    // Pricing (AX Training)
+    'pricing.training.starter.title': 'دورة مكثفة',
+    'pricing.training.starter.price': '150 دينار ליבי',
+    'pricing.training.starter.priceAlt': 'مرة واحدة',
+    'pricing.training.starter.desc': 'مقدمة في الذكاء الاصطناعي والأتمتة',
+    'pricing.training.starter.feat1': 'جلسة مكثفة لمدة 3 ساعات',
+    'pricing.training.starter.feat2': 'نظرة عامة على أدوات الذكاء الاصطناعي',
+    'pricing.training.starter.feat3': 'شهادة إتمام',
+
+    'pricing.training.growth.title': 'ورشة عمل احترافية',
+    'pricing.training.growth.price': '400 دينار ליבי',
+    'pricing.training.growth.priceAlt': 'مرة واحدة',
+    'pricing.training.growth.desc': 'التعمق في بناء أنظمتك الخاصة',
+    'pricing.training.growth.feat1': 'ورشة عمل لمدة يومين',
+    'pricing.training.growth.feat2': 'بناء روبوت محادثة بشكل حي',
+    'pricing.training.growth.feat3': 'الوصول إلى بوابة الموارد',
+    'pricing.training.growth.feat4': 'جلسة أسئلة وأجوبة 1 لـ 1',
+
+    'pricing.training.scale.title': 'تدريب الشركات',
+    'pricing.training.scale.price': 'مخصص',
+    'pricing.training.scale.priceAlt': 'لكل فريق',
+    'pricing.training.scale.desc': 'تحويل سير عمل فريقك بأكمله',
+    'pricing.training.scale.feat1': 'منهج مخصص',
+    'pricing.training.scale.feat2': 'التدريب في موقع العمل متاح',
+    'pricing.training.scale.feat3': 'عمليات تدقيق للأنظمة على مستوى الشركة',
+    'pricing.training.scale.feat4': 'دعم ما بعد التدريب',
+
     // Case Study
     'case.title': 'دراسة حالة: مطعم المنصوري',
     'case.subtitle': 'من الردود اليدوية إلى النظام الآلي',
@@ -243,7 +357,7 @@ const translations: Record<Language, Record<string, string>> = {
     'case.system.item1': 'تدفقات روبوت محادثة إنستغرام + فيسبوك',
     'case.system.item2': 'تتبع بسيط للعملاء المحتملين/الاهتمام',
     'case.system.item3': 'أسس للحملات المستقبلية',
-    
+
     // About
     'about.title': 'عن AutomateX',
     'about.mission': 'المهمة',
@@ -266,7 +380,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.values.impact.desc': 'نهدف إلى تحويل سير العمل والأعمال والعقليات.',
     'about.values.integrity': 'النزاهة',
     'about.values.integrity.desc': 'هادئون وواثقون وشفافون في كل قرار.',
-    
+
     // Resources
     'resources.title': 'موارد مجانية',
     'resources.subtitle': 'موارد بداية لاختبار الأتمتة واستخدام الذكاء الاصطناعي ببنية واضحة',
@@ -276,13 +390,13 @@ const translations: Record<Language, Record<string, string>> = {
     'resources.downloads.desc': 'حزمة الأتمتة ومخطط محرك الوسائط الاجتماعية وأدلة البداية',
     'resources.templates.title': 'متجر القوالب',
     'resources.templates.desc': 'قريبًا: أنظمة جاهزة للمطاعم والصالات الرياضية وشركات الخدمات',
-    
+
     // CTA
     'cta.title': 'هل أنت مستعد لأتمتة عملك؟',
     'cta.subtitle': 'احجز تدقيق أتمتة مجاني لمدة 20 دقيقة. سنريك ما يمكن أتمته في الـ 30 يومًا القادمة.',
     'cta.button': 'احجز تدقيق مجاني',
     'cta.email': 'أو راسلنا على',
-    
+
     // Footer
     'footer.tagline': 'نظام، وليس فوضى.',
     'footer.rights': '© 2025 AutomateX. جميع الحقوق محفوظة.',
@@ -290,12 +404,16 @@ const translations: Record<Language, Record<string, string>> = {
 };
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>(() => {
+    try { const saved = localStorage.getItem('ax:lang'); if (saved === 'ar' || saved === 'en') return saved as Language; } catch (e) { }
+    return (navigator.language || (navigator as any).userLanguage || 'en').startsWith('ar') ? 'ar' : 'en';
+  });
 
   useEffect(() => {
     // Update document direction and lang attribute
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
+    try { localStorage.setItem('ax:lang', language); } catch (e) { }
   }, [language]);
 
   const toggleLanguage = () => {

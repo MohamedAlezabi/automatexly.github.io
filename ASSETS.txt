@@ -1,0 +1,26 @@
+Assets list for AutomateX site
+
+Images / Icons (place in /assets):
+- favicon.svg (vector favicon)
+- manifest.json (web app manifest placeholder)
+- og-image.png (1200x630 OpenGraph image)
+- system-illustration.svg (hero illustration)
+- client-1.png
+- client-2.png
+- client-3.png
+- client-4.png
+- client-5.png (optional)
+- client-6.png (optional)
+
+Optional case thumbnails:
+- case-client-a.png
+- case-client-b.png
+- case-client-c.png
+
+Small icons (optional):
+- icon-whatsapp.svg
+- icon-email.svg
+
+Notes:
+- Filenames must match exactly as listed in HTML.
+- Use optimized PNG/SVG files under 150KB each for best performance.

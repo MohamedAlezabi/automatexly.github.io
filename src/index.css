@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -83,9 +83,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
   }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -97,7 +99,7 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
-  
+
   /* Arabic font support */
   [lang="ar"],
   [dir="rtl"] {
@@ -133,20 +135,88 @@
       max-width: 1280px;
     }
   }
-  
+
   /* Gradient backgrounds */
   .gradient-purple {
-    background: linear-gradient(135deg, oklch(0.55 0.25 280) 0%, oklch(0.45 0.25 260) 100%);
+    background: linear-gradient(135deg, #8F75D3 0%, #6A00FF 100%);
   }
-  
+
   .gradient-dark {
     background: linear-gradient(180deg, oklch(0.12 0.015 280) 0%, oklch(0.08 0.015 280) 100%);
   }
-  
+
   /* Glass morphism */
   .glass {
-    background: oklch(0.16 0.015 280 / 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid oklch(0.25 0.015 280 / 0.5);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
   }
+}
+
+/* Theme tokens for AutomateX OS */
+:root {
+  --ax-bg: #1A1635;
+  --ax-surface: #241f3a;
+  --ax-muted: #D9D9D9;
+  --ax-accent: #8F75D3;
+  /* default accent */
+  --ax-accent-strong: #6A00FF;
+  --ax-wave: linear-gradient(90deg, rgba(106, 0, 255, 0.06), rgba(143, 117, 211, 0.04));
+}
+
+html.light {
+  --ax-bg: #F6F6F8;
+  --ax-surface: #FFFFFF;
+  --ax-accent: #8F75D3;
+  --ax-accent-strong: #6A00FF;
+  color-scheme: light
+}
+
+body {
+  background: radial-gradient(800px 300px at 10% 10%, rgba(106, 0, 255, 0.06), transparent), var(--ax-bg);
+  color: var(--ax-muted);
+  font-family: Poppins, Montserrat, 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Roboto Mono', sans-serif;
+}
+
+/* Dark/Light theme toggle helpers */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 6px 10px;
+  border-radius: 8px
+}
+
+/* RTL support */
+[dir="rtl"] {
+  direction: rtl
+}
+
+[dir="rtl"] .nav-list {
+  direction: rtl
+}
+
+/* Hero canvas container */
+.hero-canvas-wrap {
+  position: relative
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.95
+}
+
+/* Simple OS wave/circuit accents */
+.os-accent {
+  background: var(--ax-wave);
+  border-radius: 8px;
+  padding: 8px
+}
+
+/* Utility */
+.hidden {
+  display: none
 }
