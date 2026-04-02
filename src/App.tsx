@@ -10,6 +10,7 @@ import Courses from "@/pages/Courses";
 import Lesson from "@/pages/Lesson";
 import Resources from "@/pages/Resources";
 import Admin from "@/pages/Admin";
+import { ManyChatWidget } from "@/components/ManyChatWidget";
 
 function Router() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <LanguageProvider>
           <TooltipProvider>
             <Toaster />
+            <ManyChatWidget />
             <Router />
           </TooltipProvider>
         </LanguageProvider>
