@@ -26,47 +26,77 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: 'Outfit', 'Cairo', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Poppins', 'Cairo', ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   /* Ultra-Premium 2026 Dark Base */
-  --background: oklch(0.12 0.01 260);
-  /* Deep space blue-black */
-  --foreground: oklch(0.98 0 0);
+  --background: #0A0A0F;
+  --foreground: #F5F7FF;
 
-  --card: oklch(0.15 0.01 260);
-  --card-foreground: oklch(0.98 0 0);
+  --card: #11111A;
+  --card-foreground: #F5F7FF;
 
-  --popover: oklch(0.15 0.01 260);
-  --popover-foreground: oklch(0.98 0 0);
+  --popover: #11111A;
+  --popover-foreground: #F5F7FF;
 
-  --primary: oklch(0.65 0.3 290);
-  /* Vibrant Purple/Cyan base */
-  --primary-foreground: oklch(1 0 0);
+  --primary: #7C5CFF;
+  --primary-foreground: #F5F7FF;
 
-  --secondary: oklch(0.20 0.02 260);
-  --secondary-foreground: oklch(0.9 0 0);
+  --secondary: #171724;
+  --secondary-foreground: #B6BDD2;
 
-  --muted: oklch(0.20 0.02 260);
-  --muted-foreground: oklch(0.7 0.01 260);
+  --muted: #171724;
+  --muted-foreground: #B6BDD2;
 
-  --accent: oklch(0.25 0.05 260);
-  --accent-foreground: oklch(0.98 0 0);
+  --accent: #171724;
+  --accent-foreground: #F5F7FF;
 
-  --destructive: oklch(0.6 0.25 25);
-  --destructive-foreground: oklch(1 0 0);
+  --destructive: #FF5A7A;
+  --destructive-foreground: #F5F7FF;
 
-  --border: oklch(0.22 0.02 260);
-  --input: oklch(0.22 0.02 260);
-  --ring: oklch(0.65 0.3 290);
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #7C5CFF;
 
   --radius: 1.25rem;
 
   /* Brand Specific Dynamic Variables */
-  --brand-gradient-start: #6A00FF;
-  --brand-gradient-end: #00E5FF;
-  --brand-glow: rgba(106, 0, 255, 0.4);
+  --brand-gradient-start: #7C5CFF;
+  --brand-gradient-end: #9D7CFF;
+  --brand-glow: rgba(124, 92, 255, 0.4);
+}
+
+.light {
+  --background: #FAFAFC;
+  --foreground: #0A0A0F;
+
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0F;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #0A0A0F;
+
+  --primary: #7C5CFF;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #F0F2F8;
+  --secondary-foreground: #3A3A4A;
+
+  --muted: #F0F2F8;
+  --muted-foreground: #6A6A7A;
+
+  --accent: #F0F2F8;
+  --accent-foreground: #0A0A0F;
+
+  --destructive: #FF5A7A;
+  --destructive-foreground: #FFFFFF;
+
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.08);
+  --ring: #7C5CFF;
+
+  --brand-glow: rgba(124, 92, 255, 0.2);
 }
 
 @layer base {
@@ -97,7 +127,7 @@
   /* Arabic font support */
   [lang="ar"],
   [dir="rtl"] {
-    font-family: 'Cairo', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'Cairo', 'Poppins', ui-sans-serif, system-ui, sans-serif;
   }
 }
 

@@ -12,409 +12,219 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations: Record<Language, Record<string, string>> = {
   en: {
-    // Navigation
+    // Nav
     'nav.services': 'Services',
     'nav.process': 'Process',
-    'nav.pricing': 'Pricing',
-    'nav.caseStudy': 'Case Study',
+    'nav.academy': 'Academy',
     'nav.resources': 'Resources',
-    'nav.about': 'About',
-
+    'nav.start': 'Start Now',
+    
     // Hero
-    'hero.title': 'Run Your Business on Autopilot',
-    'hero.subtitle': "Libya's first AI-powered systems agency. We build chatbots, workflows, and business systems that save time, increase sales, and handle customers 24/7.",
-    'hero.cta.primary': 'Get Started on WhatsApp',
-    'hero.cta.secondary': 'Book Free Audit',
-    'hero.badge': 'Est. 2021 • 12+ Active Clients • Libya\'s Pioneer',
-
-    // Core Pillars
-    'pillars.title': 'Four Core Pillars',
-    'pillars.subtitle': 'A complete ecosystem built to teach, automate, and inspire',
-    'pillars.tools.title': 'Tools',
-    'pillars.tools.desc': 'AI tools, workflows, and step-by-step tutorials',
-    'pillars.media.title': 'Media',
-    'pillars.media.desc': 'Storytelling, visual creation, and marketing systems',
-    'pillars.consultation.title': 'Consultation & Training',
-    'pillars.consultation.desc': 'Workshops, mentorship, and AI education',
-    'pillars.systems.title': 'Systems',
-    'pillars.systems.desc': 'Thought leadership and systemic thinking',
-
+    'hero.title': 'Build the systems behind modern business',
+    'hero.subtitle': 'AutomateX designs and deploys AI systems, automations, websites, and digital workflows that reduce manual work and improve execution.',
+    'hero.cta.primary': 'Get a Proposal',
+    'hero.cta.secondary': 'Explore Services',
+    
+    // Strip
+    'strip.ai': 'AI Systems',
+    'strip.automation': 'Automation Infrastructure',
+    'strip.websites': 'Smart Websites',
+    'strip.capture': 'Lead Capture',
+    'strip.workflows': 'Internal Workflows',
+    'strip.training': 'Training',
+    
     // Services
-    'services.title': 'What We Build',
-    'services.subtitle': 'Simple, powerful systems for real businesses',
-    'services.chatbots.title': 'AI Chatbots',
-    'services.chatbots.desc': '24/7 smart replies on WhatsApp, Instagram, and Facebook. Answer questions, collect leads, send menus, and move people toward booking—automatically.',
-    'services.workflows.title': 'Workflow Automation',
-    'services.workflows.desc': 'Stop losing customers to "I forgot". Turn repetitive tasks into automated flows: reminders, re-engagement, notifications, and internal processes.',
-    'services.systems.title': 'Business Systems',
-    'services.systems.desc': 'A clean setup connecting everything: customer messages, bookings, notes, and follow-ups—so your business feels organized instead of chaotic.',
+    'services.title': 'The systems we build',
+    'services.subtitle': 'We build digital systems that help businesses operate faster, respond better, and scale with less friction.',
+    
+    'services.c1.title': 'AI Chatbots',
+    'services.c1.desc': 'Automate conversations across WhatsApp, websites, and social channels to answer questions, qualify leads, and reduce response time.',
+    
+    'services.c2.title': 'Internal Automations',
+    'services.c2.desc': 'Remove repetitive manual work with workflows that connect forms, approvals, notifications, databases, and everyday operations.',
+    
+    'services.c3.title': 'Smart Websites',
+    'services.c3.desc': 'Build modern websites that do more than look good — they explain, convert, and support the business.',
+    
+    'services.c4.title': 'Lead Capture Systems',
+    'services.c4.desc': 'Turn attention into structured inquiries with better forms, funnels, routing, and follow-up logic.',
+    
+    'services.c5.title': 'Dashboards & Ops Layers',
+    'services.c5.desc': 'Centralize information and simplify visibility across tasks, leads, updates, and internal execution.',
+    
+    'services.c6.title': 'Training & AI Adoption',
+    'services.c6.desc': 'Help teams understand, adopt, and use AI tools in practical ways that fit real workflows.',
+    
+    // Why AutomateX
+    'why.title': 'Why clients work with AutomateX',
+    'why.subtitle': 'Because most businesses do not need more noise. They need better systems.',
+    'why.i1': 'Less repetitive work',
+    'why.i2': 'Faster response and follow-up',
+    'why.i3': 'Better digital structure',
+    'why.i4': 'Clearer operations',
+    'why.i5': 'More scalable execution',
+    'why.i6': 'Stronger online presence',
 
     // Process
-    'process.title': 'How It Works',
-    'process.subtitle': 'Clear, lightweight process. No endless calls, no confusion.',
-    'process.step1.title': 'Free Automation Audit',
-    'process.step1.desc': 'We look at how customers reach you and where time is being wasted (10 minutes)',
-    'process.step2.title': 'System Design',
-    'process.step2.desc': 'We map a simple automation flow based on your goals',
-    'process.step3.title': 'Installation',
-    'process.step3.desc': 'We connect chatbots, WhatsApp/IG, CRM, and workflows',
-    'process.step4.title': 'Optimization',
-    'process.step4.desc': 'We tune replies, steps, and triggers over 2-4 weeks',
-    'process.step5.title': 'Maintenance',
-    'process.step5.desc': 'Optional monthly updates as your business changes',
+    'process.title': 'A clear system from idea to deployment',
+    'process.s1.title': 'Audit',
+    'process.s1.desc': 'We identify the real friction points, bottlenecks, and opportunities.',
+    'process.s2.title': 'Architecture',
+    'process.s2.desc': 'We design the right system, structure, and user flow.',
+    'process.s3.title': 'Build',
+    'process.s3.desc': 'We develop the website, automation, chatbot, or digital layer.',
+    'process.s4.title': 'Deploy & Optimize',
+    'process.s4.desc': 'We test, refine, and launch with practical performance in mind.',
 
-    // Pricing
-    'pricing.title': 'Simple Pricing',
-    'pricing.subtitle': 'Transparent pricing you can grow with',
-    // Pricing (AutomateX / Systems & Tools)
-    'pricing.ax.starter.title': 'Starter System',
-    'pricing.ax.starter.price': '250 LYD',
-    'pricing.ax.starter.priceAlt': 'Monthly',
-    'pricing.ax.starter.desc': 'Ideal for testing automation on a single channel',
-    'pricing.ax.starter.feat1': 'Basic AI chatbot',
-    'pricing.ax.starter.feat2': 'FAQ replies',
-    'pricing.ax.starter.feat3': 'Lead capture',
+    // Use cases
+    'cases.title': 'What this can look like in practice',
+    'cases.i1': 'A restaurant that handles inquiries and orders more efficiently on WhatsApp',
+    'cases.i2': 'A training center with a cleaner student registration flow',
+    'cases.i3': 'An initiative website that organizes information, resources, and contact points',
+    'cases.i4': 'A school inquiry system that reduces manual back-and-forth',
+    'cases.i5': 'A chatbot that answers FAQs and captures qualified leads',
+    'cases.i6': 'An admin dashboard that keeps operations visible and organized',
 
-    'pricing.ax.growth.title': 'Growth System',
-    'pricing.ax.growth.price': '450 LYD',
-    'pricing.ax.growth.priceAlt': 'Monthly',
-    'pricing.ax.growth.desc': 'Best for restaurants, gyms, clinics and local brands',
-    'pricing.ax.growth.feat1': 'Full chatbot + flows',
-    'pricing.ax.growth.feat2': 'Basic CRM & tagging',
-    'pricing.ax.growth.feat3': 'Simple bookings or orders',
-    'pricing.ax.growth.feat4': 'Light analytics',
-
-    'pricing.ax.scale.title': 'Scale System',
-    'pricing.ax.scale.price': '800 LYD',
-    'pricing.ax.scale.priceAlt': 'Monthly',
-    'pricing.ax.scale.desc': 'For serious operations that want a full AI-powered engine',
-    'pricing.ax.scale.feat1': 'Full automation system',
-    'pricing.ax.scale.feat2': 'Advanced tracking & reports',
-    'pricing.ax.scale.feat3': 'Comment → DM → sale funnels',
-    'pricing.ax.scale.feat4': 'Priority support',
-
-    // Pricing (AX Media / SMM)
-    'pricing.media.starter.title': 'Content Starter',
-    'pricing.media.starter.price': '350 LYD',
-    'pricing.media.starter.priceAlt': 'Monthly',
-    'pricing.media.starter.desc': 'Essential social media presence',
-    'pricing.media.starter.feat1': '8 Posts per month',
-    'pricing.media.starter.feat2': 'Basic graphic design',
-    'pricing.media.starter.feat3': '1 Platform management',
-
-    'pricing.media.growth.title': 'Media Pro',
-    'pricing.media.growth.price': '700 LYD',
-    'pricing.media.growth.priceAlt': 'Monthly',
-    'pricing.media.growth.desc': 'Comprehensive content and video strategy',
-    'pricing.media.growth.feat1': '15 Posts + 4 Reels',
-    'pricing.media.growth.feat2': 'Professional video editing',
-    'pricing.media.growth.feat3': '2 Platforms management',
-    'pricing.media.growth.feat4': 'Monthly performance report',
-
-    'pricing.media.scale.title': 'Agency Pipeline',
-    'pricing.media.scale.price': '1200 LYD',
-    'pricing.media.scale.priceAlt': 'Monthly',
-    'pricing.media.scale.desc': 'Full-scale marketing engine',
-    'pricing.media.scale.feat1': 'Daily content + 8 Reels',
-    'pricing.media.scale.feat2': 'Ad campaign management',
-    'pricing.media.scale.feat3': 'Content strategy consulting',
-    'pricing.media.scale.feat4': 'All platforms covered',
-
-    // Pricing (AX Training)
-    'pricing.training.starter.title': 'Crash Course',
-    'pricing.training.starter.price': '150 LYD',
-    'pricing.training.starter.priceAlt': 'One-time',
-    'pricing.training.starter.desc': 'Introduction to AI and Automation',
-    'pricing.training.starter.feat1': '3-hour intensive session',
-    'pricing.training.starter.feat2': 'Basic AI tools overview',
-    'pricing.training.starter.feat3': 'Certificate of completion',
-
-    'pricing.training.growth.title': 'Pro Workshop',
-    'pricing.training.growth.price': '400 LYD',
-    'pricing.training.growth.priceAlt': 'One-time',
-    'pricing.training.growth.desc': 'Deep dive into building your own systems',
-    'pricing.training.growth.feat1': '2-day workshop',
-    'pricing.training.growth.feat2': 'Build a chatbot live',
-    'pricing.training.growth.feat3': 'Access to resource portal',
-    'pricing.training.growth.feat4': '1-on-1 Q&A session',
-
-    'pricing.training.scale.title': 'Corporate Training',
-    'pricing.training.scale.price': 'Custom',
-    'pricing.training.scale.priceAlt': 'Per Team',
-    'pricing.training.scale.desc': 'Transform your entire team’s workflow',
-    'pricing.training.scale.feat1': 'Customized curriculum',
-    'pricing.training.scale.feat2': 'On-site training available',
-    'pricing.training.scale.feat3': 'Company-wide system audits',
-    'pricing.training.scale.feat4': 'Post-training support',
-
-    // Case Study
-    'case.title': 'Case Study: Almansory Restaurant',
-    'case.subtitle': 'From manual replies to automated system',
-    'case.before.title': 'Before',
-    'case.before.item1': 'Owner replying to DMs manually',
-    'case.before.item2': 'No tracking of what posts brought customers',
-    'case.before.item3': 'Inconsistent response times',
-    'case.after.title': 'After AutomateX',
-    'case.after.item1': 'Automated menu & FAQ replies',
-    'case.after.item2': 'Comment → DM → order flow',
-    'case.after.item3': 'Clear understanding of what drives sales',
-    'case.system.title': 'System Installed',
-    'case.system.item1': 'Instagram + Facebook chatbot flows',
-    'case.system.item2': 'Simple lead/interest tracking',
-    'case.system.item3': 'Foundations for future campaigns',
-
-    // About
-    'about.title': 'About AutomateX',
-    'about.mission': 'Mission',
-    'about.mission.text': 'Automate business workflows and implement AI systems to help organisations operate smarter and faster.',
-    'about.services': 'Services',
-    'about.services.text': 'Automation solutions, AI-powered tools, workflow optimisation.',
-    'about.target': 'Target Clients',
-    'about.target.text': 'International schools, SMEs, and growing organisations looking to modernise operations.',
-    'about.founder': 'Founded by Mohamed Al-Ezabi, an AI expert and systems thinker. Based in Libya, serving clients across MENA and beyond.',
-    'about.values.title': 'Our Values',
-    'about.values.clarity': 'Clarity',
-    'about.values.clarity.desc': 'We communicate simply and systemically. No noise, no hype.',
-    'about.values.innovation': 'Innovation',
-    'about.values.innovation.desc': 'We embrace new technology and push boundaries responsibly.',
-    'about.values.structure': 'Structure',
-    'about.values.structure.desc': 'Everything we build is organised, repeatable, and scalable.',
-    'about.values.education': 'Education',
-    'about.values.education.desc': 'We teach before we sell; knowledge fuels empowerment.',
-    'about.values.impact': 'Impact',
-    'about.values.impact.desc': 'We aim to transform workflows, businesses, and mindsets.',
-    'about.values.integrity': 'Integrity',
-    'about.values.integrity.desc': 'Calm, confident, and transparent in every decision.',
-
-    // Resources
-    'resources.title': 'Free Resources',
-    'resources.subtitle': 'Starter resources to test automation and use AI with clear structure',
-    'resources.prompts.title': 'Prompt Library',
-    'resources.prompts.desc': '100+ ready-to-use prompts for leads, content, and automation',
-    'resources.downloads.title': 'Free Downloads',
-    'resources.downloads.desc': 'Automation pack, social engine blueprint, and starter guides',
-    'resources.templates.title': 'Template Store',
-    'resources.templates.desc': 'Coming soon: Ready-made systems for restaurants, gyms, and service businesses',
+    // Credibility
+    'cred.title': 'Built for practical execution',
+    'cred.subtitle': 'AutomateX combines strategy, systems thinking, design, and implementation to help businesses build digital infrastructure that actually gets used.',
 
     // CTA
-    'cta.title': 'Ready to Automate Your Business?',
-    'cta.subtitle': 'Book a free 20-minute automation audit. We\'ll show you what can be automated in the next 30 days.',
-    'cta.button': 'Book Free Audit',
-    'cta.email': 'Or email us at',
-
+    'cta.title': 'Need a smarter system behind your business?',
+    'cta.subtitle': 'Let’s design the right automation, website, or digital workflow for your operation.',
+    'cta.primary': 'Book a Strategy Call',
+    'cta.secondary': 'Message on WhatsApp',
+    
     // Footer
-    'footer.tagline': 'System, not chaos.',
-    'footer.rights': '© 2025 AutomateX. All rights reserved.',
+    'footer.rights': '© 2026 AutomateX. All rights reserved.',
+
+    // Placeholders
+    'ph.hero': '[ Replace with a system-oriented illustration or dashboard-style composition in Framer Motion or an Image block. ]',
+    'ph.chat': '[ Visual Placeholder: Chat UI / WhatsApp Interface ]',
+    'ph.nodes': '[ Visual Placeholder: Make/Zapier Style Nodes ]',
+    'ph.web': '[ Visual Placeholder: Wireframe or Browser Mockup ]',
+    'ph.funnel': '[ Visual Placeholder: Form or Funnel Graphic ]',
+    'ph.dash': '[ Visual Placeholder: Kanban Board or Chart ]',
+    'ph.video': '[ Visual Placeholder: Video Player or Docs Graphic ]',
+    'ph.cred': 'Replace this block with a clean, high-quality image of the founder, a professional team snapshot, or a credibility-inducing system architecture graphic.',
+    'ph.ui': '[ USER INSTRUCTION ]'
   },
   ar: {
-    // Navigation
+    // Nav
     'nav.services': 'الخدمات',
     'nav.process': 'العملية',
-    'nav.pricing': 'الأسعار',
-    'nav.caseStudy': 'دراسة حالة',
+    'nav.academy': 'الأكاديمية',
     'nav.resources': 'الموارد',
-    'nav.about': 'عن الشركة',
-
+    'nav.start': 'ابدأ الآن',
+    
     // Hero
-    'hero.title': 'شغّل عملك بشكل تلقائي',
-    'hero.subtitle': 'أول وكالة أنظمة مدعومة بالذكاء الاصطناعي في ليبيا. نبني روبوتات المحادثة وسير العمل وأنظمة الأعمال التي توفر الوقت وتزيد المبيعات وتتعامل مع العملاء على مدار الساعة.',
-    'hero.cta.primary': 'ابدأ على واتساب',
-    'hero.cta.secondary': 'احجز تدقيق مجاني',
-    'hero.badge': 'تأسست 2021 • 12+ عميل نشط • رائدة ليبيا',
-
-    // Core Pillars
-    'pillars.title': 'أربع ركائز أساسية',
-    'pillars.subtitle': 'نظام بيئي كامل مبني للتعليم والأتمتة والإلهام',
-    'pillars.tools.title': 'الأدوات',
-    'pillars.tools.desc': 'أدوات الذكاء الاصطناعي وسير العمل والدروس التعليمية',
-    'pillars.media.title': 'الإعلام',
-    'pillars.media.desc': 'سرد القصص والإبداع المرئي وأنظمة التسويق',
-    'pillars.consultation.title': 'الاستشارات والتدريب',
-    'pillars.consultation.desc': 'ورش العمل والإرشاد والتعليم في مجال الذكاء الاصطناعي',
-    'pillars.systems.title': 'الأنظمة',
-    'pillars.systems.desc': 'القيادة الفكرية والتفكير المنهجي',
-
+    'hero.title': 'نبني الأنظمة التي تحرك الشركات الحديثة',
+    'hero.subtitle': 'تقوم AutomateX بتصميم ونشر أنظمة الذكاء الاصطناعي، الأتمتة، المواقع الإلكترونية، وسير العمل الرقمي مما يقلل العمل اليدوي ويحسن الأداء.',
+    'hero.cta.primary': 'احصل على عرض سعر',
+    'hero.cta.secondary': 'استكشف الخدمات',
+    
+    // Strip
+    'strip.ai': 'أنظمة الذكاء الاصطناعي',
+    'strip.automation': 'البنية التحتية للأتمتة',
+    'strip.websites': 'مواقع ذكية',
+    'strip.capture': 'استقطاب العملاء',
+    'strip.workflows': 'سير العمل الداخلي',
+    'strip.training': 'التدريب',
+    
     // Services
-    'services.title': 'ما نبنيه',
-    'services.subtitle': 'أنظمة بسيطة وقوية للأعمال الحقيقية',
-    'services.chatbots.title': 'روبوتات المحادثة الذكية',
-    'services.chatbots.desc': 'ردود ذكية على مدار الساعة على واتساب وإنستغرام وفيسبوك. الإجابة على الأسئلة وجمع العملاء المحتملين وإرسال القوائم ونقل الأشخاص نحو الحجز—تلقائيًا.',
-    'services.workflows.title': 'أتمتة سير العمل',
-    'services.workflows.desc': 'توقف عن فقدان العملاء بسبب "نسيت". حوّل المهام المتكررة إلى تدفقات تلقائية: التذكيرات وإعادة المشاركة والإشعارات والعمليات الداخلية.',
-    'services.systems.title': 'أنظمة الأعمال',
-    'services.systems.desc': 'إعداد نظيف يربط كل شيء: رسائل العملاء والحجوزات والملاحظات والمتابعات—حتى يشعر عملك بالتنظيم بدلاً من الفوضى.',
+    'services.title': 'الأنظمة التي نبنيها',
+    'services.subtitle': 'نبني أنظمة رقمية لتساعد الشركات على العمل بشكل أسرع، الاستجابة بشكل أفضل، والتوسع بأقل تعقيد.',
+    
+    'services.c1.title': 'مساعدون أذكياء (Chatbots)',
+    'services.c1.desc': 'أتمتة المحادثات عبر واتساب، المواقع، وشبكات التواصل للإجابة على الأسئلة، تأهيل العملاء، وتقليل وقت الاستجابة.',
+    
+    'services.c2.title': 'أتمتة سير العمل الداخلي',
+    'services.c2.desc': 'إزالة العمل اليدوي المتكرر عبر بناء تدفقات تربط النماذج، الموافقات، الإشعارات، قواعد البيانات والعمليات اليومية.',
+    
+    'services.c3.title': 'مواقع ذكية ومتقدمة',
+    'services.c3.desc': 'بناء مواقع حديثة لا تبدو رائعة فحسب — بل تشرح خدماتك، تحول الزوار إلى عملاء، وتدعم عملك.',
+    
+    'services.c4.title': 'أنظمة التقاط العملاء',
+    'services.c4.desc': 'تحويل الانتباه إلى استفسارات منظمة باستخدام نماذج، مسارات تحويل، التوجيه، ومنطق المتابعة الفعال.',
+    
+    'services.c5.title': 'لوحات التحكم وإدارة العمليات',
+    'services.c5.desc': 'مركزة المعلومات وتبسيط الرؤية عبر عرض المهام، العملاء، التحديثات والسير الداخلي للعمل.',
+    
+    'services.c6.title': 'التدريب وتبني الذكاء الاصطناعي',
+    'services.c6.desc': 'مساعدة الفِرق على فهم، تبني، واستخدام أدوات الذكاء الاصطناعي بطرق عملية تناسب بيئة العمل الحقيقية.',
+    
+    // Why AutomateX
+    'why.title': 'لماذا يعمل العملاء مع AutomateX',
+    'why.subtitle': 'لأن معظم الشركات لا تحتاج إلى المزيد من الفوضى. هم يحتاجون إلى أنظمة أفضل.',
+    'why.i1': 'أعمال متكررة أقل',
+    'why.i2': 'استجابة ومتابعة أسرع',
+    'why.i3': 'بنية رقمية أفضل',
+    'why.i4': 'عمليات أوضح بكثير',
+    'why.i5': 'أداء قابل للتوسع والتطور',
+    'why.i6': 'حضور أقوى على الإنترنت',
 
     // Process
-    'process.title': 'كيف يعمل',
-    'process.subtitle': 'عملية واضحة وخفيفة. لا مكالمات لا نهاية لها، لا ارتباك.',
-    'process.step1.title': 'تدقيق الأتمتة المجاني',
-    'process.step1.desc': 'ننظر إلى كيفية وصول العملاء إليك وأين يتم إهدار الوقت (10 دقائق)',
-    'process.step2.title': 'تصميم النظام',
-    'process.step2.desc': 'نرسم تدفق أتمتة بسيط بناءً على أهدافك',
-    'process.step3.title': 'التثبيت',
-    'process.step3.desc': 'نربط روبوتات المحادثة وواتساب/إنستغرام وإدارة علاقات العملاء وسير العمل',
-    'process.step4.title': 'التحسين',
-    'process.step4.desc': 'نضبط الردود والخطوات والمحفزات على مدى 2-4 أسابيع',
-    'process.step5.title': 'الصيانة',
-    'process.step5.desc': 'تحديثات شهرية اختيارية مع تغير عملك',
+    'process.title': 'نظام واضح من الفكرة للتنفيذ',
+    'process.s1.title': 'التدقيق والتقييم',
+    'process.s1.desc': 'نحدد نقاط الاحتكاك الحقيقية، العوائق، والفرص المتاحة.',
+    'process.s2.title': 'هندسة النظام',
+    'process.s2.desc': 'نصمم النظام الصحيح، بنيته، وتجربة أو مسار المستخدم.',
+    'process.s3.title': 'البناء والتطوير',
+    'process.s3.desc': 'نطور الموقع، الأتمتة، روبوت المحادثة، أو الطبقة الرقمية بالكامل.',
+    'process.s4.title': 'النشر والتحسين',
+    'process.s4.desc': 'نختبر الدقة، نحسّن المنطق، ونطلق مع التركيز العملي على الأداء.',
 
-    // Pricing
-    'pricing.title': 'أسعار بسيطة',
-    'pricing.subtitle': 'أسعار شفافة يمكنك النمو معها',
-    // Pricing (AutomateX / Systems & Tools)
-    'pricing.ax.starter.title': 'نظام البداية',
-    'pricing.ax.starter.price': '250 دينار ליבי',
-    'pricing.ax.starter.priceAlt': 'شهرياً',
-    'pricing.ax.starter.desc': 'مثالي لاختبار الأتمتة على قناة واحدة',
-    'pricing.ax.starter.feat1': 'روبوت محادثة ذكي أساسي',
-    'pricing.ax.starter.feat2': 'ردود الأسئلة الشائعة',
-    'pricing.ax.starter.feat3': 'التقاط العملاء المحتملين',
+    // Use cases
+    'cases.title': 'كيف يبدو هذا على أرض الواقع',
+    'cases.i1': 'مطعم يتعامل مع الاستفسارات والطلبات بكفاءة أعلى على واتساب',
+    'cases.i2': 'مركز تدريب بآلية تسجيل طلاب منظمة وأكثر وضوحاً',
+    'cases.i3': 'موقع رقمي لمبادرة ينظم المعلومات، الموارد، ونقاط الاتصال مباشرة',
+    'cases.i4': 'نظام استفسار في مدرسة يُقلص الكثير من المراسلات اليدوية المزعجة',
+    'cases.i5': 'روبوت ذكي يجيب على الأسئلة الشائعة ويسجّل المهتمين فوراً',
+    'cases.i6': 'لوحة تحكم إدارية تبقي مسار العمليات مرئيًا ومنظمًا ومتاحاً',
 
-    'pricing.ax.growth.title': 'نظام النمو',
-    'pricing.ax.growth.price': '450 دينار ליבי',
-    'pricing.ax.growth.priceAlt': 'شهرياً',
-    'pricing.ax.growth.desc': 'الأفضل للمطاعم والصالات الرياضية والعيادات',
-    'pricing.ax.growth.feat1': 'روبوت محادثة كامل + تدفقات',
-    'pricing.ax.growth.feat2': 'إدارة علاقات العملاء الأساسية',
-    'pricing.ax.growth.feat3': 'حجوزات أو طلبات بسيطة',
-    'pricing.ax.growth.feat4': 'تحليلات خفيفة',
-
-    'pricing.ax.scale.title': 'نظام التوسع',
-    'pricing.ax.scale.price': '800 دينار ליבי',
-    'pricing.ax.scale.priceAlt': 'شهرياً',
-    'pricing.ax.scale.desc': 'للعمليات الجادة التي تريد محركًا كاملاً',
-    'pricing.ax.scale.feat1': 'نظام أتمتة كامل',
-    'pricing.ax.scale.feat2': 'تتبع وتقارير متقدمة',
-    'pricing.ax.scale.feat3': 'تعليق → رسالة مباشرة → قمع مبيعات',
-    'pricing.ax.scale.feat4': 'دعم ذو أولوية',
-
-    // Pricing (AX Media / SMM)
-    'pricing.media.starter.title': 'بداية المحتوى',
-    'pricing.media.starter.price': '350 دينار ליבי',
-    'pricing.media.starter.priceAlt': 'شهرياً',
-    'pricing.media.starter.desc': 'التواجد الأساسي على وسائل التواصل',
-    'pricing.media.starter.feat1': '8 منشورات شهرياً',
-    'pricing.media.starter.feat2': 'تصميم جرافيك أساسي',
-    'pricing.media.starter.feat3': 'إدارة منصة واحدة',
-
-    'pricing.media.growth.title': 'ميديا برو',
-    'pricing.media.growth.price': '700 دينار ליבי',
-    'pricing.media.growth.priceAlt': 'شهرياً',
-    'pricing.media.growth.desc': 'استراتيجية شاملة للمحتوى والفيديو',
-    'pricing.media.growth.feat1': '15 منشوراً + 4 مقاطع ريلز',
-    'pricing.media.growth.feat2': 'تحرير فيديو احترافي',
-    'pricing.media.growth.feat3': 'إدارة منصتين',
-    'pricing.media.growth.feat4': 'تقرير أداء شهري',
-
-    'pricing.media.scale.title': 'حزمة الوكالة',
-    'pricing.media.scale.price': '1200 دينار ליבי',
-    'pricing.media.scale.priceAlt': 'شهرياً',
-    'pricing.media.scale.desc': 'محرك تسويق متكامل',
-    'pricing.media.scale.feat1': 'محتوى يومي + 8 مقاطع ريلز',
-    'pricing.media.scale.feat2': 'إدارة الحملات الإعلانية',
-    'pricing.media.scale.feat3': 'استشارات استراتيجية المحتوى',
-    'pricing.media.scale.feat4': 'تغطية جميع المنصات',
-
-    // Pricing (AX Training)
-    'pricing.training.starter.title': 'دورة مكثفة',
-    'pricing.training.starter.price': '150 دينار ליבי',
-    'pricing.training.starter.priceAlt': 'مرة واحدة',
-    'pricing.training.starter.desc': 'مقدمة في الذكاء الاصطناعي والأتمتة',
-    'pricing.training.starter.feat1': 'جلسة مكثفة لمدة 3 ساعات',
-    'pricing.training.starter.feat2': 'نظرة عامة على أدوات الذكاء الاصطناعي',
-    'pricing.training.starter.feat3': 'شهادة إتمام',
-
-    'pricing.training.growth.title': 'ورشة عمل احترافية',
-    'pricing.training.growth.price': '400 دينار ליבי',
-    'pricing.training.growth.priceAlt': 'مرة واحدة',
-    'pricing.training.growth.desc': 'التعمق في بناء أنظمتك الخاصة',
-    'pricing.training.growth.feat1': 'ورشة عمل لمدة يومين',
-    'pricing.training.growth.feat2': 'بناء روبوت محادثة بشكل حي',
-    'pricing.training.growth.feat3': 'الوصول إلى بوابة الموارد',
-    'pricing.training.growth.feat4': 'جلسة أسئلة وأجوبة 1 لـ 1',
-
-    'pricing.training.scale.title': 'تدريب الشركات',
-    'pricing.training.scale.price': 'مخصص',
-    'pricing.training.scale.priceAlt': 'لكل فريق',
-    'pricing.training.scale.desc': 'تحويل سير عمل فريقك بأكمله',
-    'pricing.training.scale.feat1': 'منهج مخصص',
-    'pricing.training.scale.feat2': 'التدريب في موقع العمل متاح',
-    'pricing.training.scale.feat3': 'عمليات تدقيق للأنظمة على مستوى الشركة',
-    'pricing.training.scale.feat4': 'دعم ما بعد التدريب',
-
-    // Case Study
-    'case.title': 'دراسة حالة: مطعم المنصوري',
-    'case.subtitle': 'من الردود اليدوية إلى النظام الآلي',
-    'case.before.title': 'قبل',
-    'case.before.item1': 'المالك يرد على الرسائل المباشرة يدويًا',
-    'case.before.item2': 'لا تتبع للمنشورات التي جلبت العملاء',
-    'case.before.item3': 'أوقات استجابة غير متسقة',
-    'case.after.title': 'بعد AutomateX',
-    'case.after.item1': 'ردود تلقائية للقائمة والأسئلة الشائعة',
-    'case.after.item2': 'تعليق → رسالة مباشرة → تدفق الطلب',
-    'case.after.item3': 'فهم واضح لما يدفع المبيعات',
-    'case.system.title': 'النظام المثبت',
-    'case.system.item1': 'تدفقات روبوت محادثة إنستغرام + فيسبوك',
-    'case.system.item2': 'تتبع بسيط للعملاء المحتملين/الاهتمام',
-    'case.system.item3': 'أسس للحملات المستقبلية',
-
-    // About
-    'about.title': 'عن AutomateX',
-    'about.mission': 'المهمة',
-    'about.mission.text': 'أتمتة سير عمل الأعمال وتنفيذ أنظمة الذكاء الاصطناعي لمساعدة المؤسسات على العمل بشكل أذكى وأسرع.',
-    'about.services': 'الخدمات',
-    'about.services.text': 'حلول الأتمتة والأدوات المدعومة بالذكاء الاصطناعي وتحسين سير العمل.',
-    'about.target': 'العملاء المستهدفون',
-    'about.target.text': 'المدارس الدولية والشركات الصغيرة والمتوسطة والمؤسسات النامية التي تتطلع إلى تحديث العمليات.',
-    'about.founder': 'أسسها محمد العزابي، خبير في الذكاء الاصطناعي ومفكر في الأنظمة. مقرها في ليبيا، تخدم العملاء في منطقة الشرق الأوسط وشمال أفريقيا وخارجها.',
-    'about.values.title': 'قيمنا',
-    'about.values.clarity': 'الوضوح',
-    'about.values.clarity.desc': 'نتواصل ببساطة ومنهجية. لا ضوضاء، لا مبالغة.',
-    'about.values.innovation': 'الابتكار',
-    'about.values.innovation.desc': 'نتبنى التكنولوجيا الجديدة وندفع الحدود بمسؤولية.',
-    'about.values.structure': 'البنية',
-    'about.values.structure.desc': 'كل ما نبنيه منظم وقابل للتكرار وقابل للتوسع.',
-    'about.values.education': 'التعليم',
-    'about.values.education.desc': 'نعلم قبل أن نبيع؛ المعرفة تغذي التمكين.',
-    'about.values.impact': 'التأثير',
-    'about.values.impact.desc': 'نهدف إلى تحويل سير العمل والأعمال والعقليات.',
-    'about.values.integrity': 'النزاهة',
-    'about.values.integrity.desc': 'هادئون وواثقون وشفافون في كل قرار.',
-
-    // Resources
-    'resources.title': 'موارد مجانية',
-    'resources.subtitle': 'موارد بداية لاختبار الأتمتة واستخدام الذكاء الاصطناعي ببنية واضحة',
-    'resources.prompts.title': 'مكتبة التعليمات',
-    'resources.prompts.desc': '100+ تعليمات جاهزة للاستخدام للعملاء المحتملين والمحتوى والأتمتة',
-    'resources.downloads.title': 'تنزيلات مجانية',
-    'resources.downloads.desc': 'حزمة الأتمتة ومخطط محرك الوسائط الاجتماعية وأدلة البداية',
-    'resources.templates.title': 'متجر القوالب',
-    'resources.templates.desc': 'قريبًا: أنظمة جاهزة للمطاعم والصالات الرياضية وشركات الخدمات',
+    // Credibility
+    'cred.title': 'مُصمم للتنفيذ العملي والحقيقي',
+    'cred.subtitle': 'تجمع AutomateX بين التخطيط الاستراتيجي، التفكير النُظُمي، التصميم، والتنفيذ لمساعدة الشركات على بناء بنية تحتية رقمية يمكن استخدامها فعلياً وعلى نطاق واسع.',
 
     // CTA
-    'cta.title': 'هل أنت مستعد لأتمتة عملك؟',
-    'cta.subtitle': 'احجز تدقيق أتمتة مجاني لمدة 20 دقيقة. سنريك ما يمكن أتمته في الـ 30 يومًا القادمة.',
-    'cta.button': 'احجز تدقيق مجاني',
-    'cta.email': 'أو راسلنا على',
-
+    'cta.title': 'هل تحتاج إلى نظام أذكى خلف عملك؟',
+    'cta.subtitle': 'دعنا نُصمم الأتمتة، الموقع الإلكتروني، أو مسار العمل الرقمي المناسب لعملياتك.',
+    'cta.primary': 'احجز مكالمة تخطيط',
+    'cta.secondary': 'تواصل عبر واتساب',
+    
     // Footer
-    'footer.tagline': 'نظام، وليس فوضى.',
-    'footer.rights': '© 2025 AutomateX. جميع الحقوق محفوظة.',
-  },
+    'footer.rights': '© 2026 AutomateX. جميع الحقوق محفوظة.',
+
+    // Placeholders
+    'ph.hero': '[ استبدل هذا برسوم توضيحية للأنظمة أو نمط لوحة معلومات تم تصميمه بواسطة Framer Motion ]',
+    'ph.chat': '[ مكان بصري: واجهة دردشة أو واتساب ]',
+    'ph.nodes': '[ مكان بصري: هيكل العقد البرمجية لـ Make/Zapier ]',
+    'ph.web': '[ مكان بصري: تصميم هيكل موقع أو متصفح ]',
+    'ph.funnel': '[ مكان بصري: رسم بياني لنموذج أو قمع تسويقي ]',
+    'ph.dash': '[ مكان بصري: لوحة مهام أو رسم بياني إحصائي ]',
+    'ph.video': '[ مكان بصري: مشغل فيديو أو تصميمات وثائقية ]',
+    'ph.cred': 'استبدل هذه الكتلة بصورة نظيفة للمؤسس، لقطة احترافية لفريق العمل، أو رسم معماري لنظام يزيد من الثقة والمصداقية.',
+    'ph.ui': '[ تعليمات المستخدم ]'
+  }
 };
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>(() => {
-    try { const saved = localStorage.getItem('ax:lang'); if (saved === 'ar' || saved === 'en') return saved as Language; } catch (e) { }
-    return (navigator.language || (navigator as any).userLanguage || 'en').startsWith('ar') ? 'ar' : 'en';
-  });
+  // Wait until mounted to avoid hydration mismatch, default to english initially for SSR safe component
+  const [mounted, setMounted] = useState(false);
+  const [language, setLanguage] = useState<Language>('en');
 
   useEffect(() => {
-    // Update document direction and lang attribute
+    try { const saved = localStorage.getItem('ax:lang'); if (saved === 'ar' || saved === 'en') setLanguage(saved as Language); } catch (e) { }
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if(!mounted) return;
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
     try { localStorage.setItem('ax:lang', language); } catch (e) { }
-  }, [language]);
+  }, [language, mounted]);
 
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'en' ? 'ar' : 'en');
